@@ -1,9 +1,10 @@
 .vscode
-/venv
-/myvenv
+venv/
+myvenv/
 
 ### Django ###
 __pycache__/
 *.pyc
 *.log
 *.pot
+db.sqlite3
