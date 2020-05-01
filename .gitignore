@@ -1,3 +1,9 @@
 .vscode
 /venv
 /myvenv
+
+### Django ###
+__pycache__/
+*.pyc
+*.log
+*.pot
