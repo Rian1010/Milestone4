@@ -9,8 +9,8 @@
 <body>
     <h1>{% block heading %}{% endblock %}</h1>
 
-    <nav>
-        <ul>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
             {% if user.is_authenticated %}
             <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a  href="{% url 'logout' %}">Logout</a></li>
