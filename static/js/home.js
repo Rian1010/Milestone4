@@ -1,22 +1,18 @@
 $(document).ready(function () {
     // ------------------------------------------ Navigation Bar ------------------------------------------ //
     window.addEventListener('DOMContentLoaded', function () {
-        $(window).onload(function () {
-            $('.navbar').css({
-                height: "100px",
-                'background-image': "linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f)",
-            });
+        $('.navbar').css({
+            height: "100px",
+            'background-image': "linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f)",
         });
     });
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY >= 10) {
-            $(window).scroll(function() {
-                $('.navbar').css({
-                    'background-image': "linear-gradient(rgba(0,0,0,0))",
-                    transition: "1s",
-                    height: "60px",
-                });
+            $('.navbar').css({
+                'background-image': "linear-gradient(rgba(0,0,0,0))",
+                transition: "1s",
+                height: "60px",
             });
         }
     });
@@ -64,4 +60,15 @@ $(document).ready(function () {
             }
         })
     });
+
+    // ------------------------------------------ Smartphone Photography Examples ------------------------------------------ //
+
+    for (let i = 0; i < 3; i++) {
+        $(`#smartphonePhotography${[i]}').mouseenter(function () {
+            $('#smartphonePhotography${[i]}').children().slideDown(500);
+        });
+        $("#smartphonePhotography${[i]}').mouseout(function () {
+            $('#smartphonePhotography${[i]}').children().slideUp(500);
+        });
+    }
 });

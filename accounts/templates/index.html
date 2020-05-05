@@ -17,19 +17,22 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="First slide">
-                <h5>Heading 1</h5>
-                <p>Text 1</p>
+                <div class="personal-life-smartphone-banner">
+                    <h3>Find What Suits Your Needs!</h3>
+                    <p>Get The Smartphone That Fits Into Your Everydaylife!</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-                <h5>Heading 2</h5>
-                <p>Text 2</p>
+                <div class="smartphone-photography-banner">
+                    <h3>Smartphone Photography</h3>
+                    <p>Capture memorable moments and share them with others!</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-                <h5>Heading 3</h5>
-                <p>Text 3</p>
+                <div class="smartphone-journey-banner">
+                    <h3>Make It Be Part Of Your Daily Journey!</h3>
+                    <p>Work with it! Stay in contact! Get updated with the news!</p>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -59,14 +62,28 @@
     </div>
 </section>
 <!-- Smartphone Photography Examples -->
-<section class="section-padding" style="background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f);">
+<section class="section-padding orange-background">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center">
                 <h2>Take Stunning Pictures!</h2>
             </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="huawei-photography"></div>
+            <div class="col-sm-12 col-md-4 text-center">
+                <div class="huawei-photography" id="smartphonePhotography1">
+                    <h3>Taken With Huawei Mate 20 Pro</h3>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-4 text-center">
+                <div class="iphone-photography" id="smartphonePhotography2">
+                    <h3>Taken With iPhone</h3>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 text-center">
+                <div class="samsung-photography" id="smartphonePhotography3">
+                    <h3>Taken With Samsung Galaxy S7</h3>
+                </div>
+
             </div>
         </div>
     </div>
@@ -74,5 +91,5 @@
 {% endblock %}
 
 {% block js_tags %}
-    <script src="{% static 'js/home.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

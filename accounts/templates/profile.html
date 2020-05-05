@@ -1,11 +1,13 @@
-{% extends 'base.html' %} 
-{% block page_title %}{{ user }}'s Profile{% endblock %} 
+{% extends 'base.html' %}
+{% block page_title %}{{ user }}'s Profile{% endblock %}
 
 {% block page_heading %}
 {{ user }}'s Profile
-{% endblock %} 
+{% endblock %}
 
 {% block content %}
-<p>username: {{ profile.username }}</p>
-<p>email address: {{ profile.email }}</p>
+<section class="section-padding">
+    <p>username: {{ profile.username }}</p>
+    <p>email address: {{ profile.email }}</p>
+</section>
 {% endblock %}

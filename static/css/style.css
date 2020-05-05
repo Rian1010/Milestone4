@@ -2,7 +2,7 @@
     --main-width: 100%;
     --main-bg-size: contain;
     --main-bg-repeat: no-repeat;
-    --main-bg-position: center;
+    --main-center-position: center;
 }
 
 /* Navigation Bar */
@@ -14,6 +14,10 @@
 /* Sections */
 .section-padding {
     padding: 70px 0;
+}
+
+.orange-background {
+    background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f)
 }
 
 /* Form */
@@ -29,7 +33,51 @@ form {
 .carousel-item {
     width: var(--main-width);
     height: 70vh;
-    background-color: aqua;
+}
+
+.personal-life-smartphone-banner {
+    width: var(--main-width);
+    height: 70vh;
+    background-image:  linear-gradient(rgba(0,0,0,0), rgba(0, 0, 0, .4)),url('../images/main-smartphone-banner.jpg');
+    background-size: cover;
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    color: #fff;
+}
+
+.smartphone-photography-banner {
+    width: var(--main-width);
+    height: 70vh;
+    background-image: url('../images/smartphone-photography.jpg');
+    background-size: cover;
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    color: #fff;
+}
+
+.smartphone-journey-banner {
+    width: var(--main-width);
+    height: 70vh;
+    background-image: linear-gradient(rgba(255,255,255, .1), rgba(0, 0, 0, .2)), url('../images/PhoneAndWork.jpg');
+    background-size: cover;
+    background-repeat: var(--main-bg-repeat);
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    color: #fff;
 }
 
 /* Brand Examples */
@@ -39,7 +87,7 @@ form {
     background-image: url('../images/samsungS10E.jpg');
     background-size: var(--main-bg-size);
     background-repeat: var(--main-bg-repeat);
-    background-position: var(--main-bg-position);
+    background-position: var(--main-center-position);
 }
 
 .brand-img {
@@ -47,7 +95,7 @@ form {
     height: 500px;
     background-size: var(--main-bg-size);
     background-repeat: var(--main-bg-repeat);
-    background-position: var(--main-bg-position);
+    background-position: var(--main-center-position);
 }
 
 .brand-text {
@@ -61,8 +109,44 @@ form {
 .huawei-photography {
     width: var(--main-width);
     height: 300px;
+    color: white;
+    text-align: var(--main-center-position);
     background-image: url('../images/HuaweiPhotography.jpg');
     background-size: var(--main-bg-size);
     background-repeat: var(--main-bg-repeat);
-    background-position: var(--main-bg-position);
+    background-position: var(--main-center-position);
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: var(--main-center-position);
+}
+
+.iphone-photography {
+    width: var(--main-width);
+    height: 500px;
+    color: white;
+    text-align: var(--main-center-position);
+    background-image: url('../images/iPhonePhotography.jpg');
+    background-size: var(--main-bg-size);
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: var(--main-center-position);
+}
+
+.samsung-photography {
+    width: var(--main-width);
+    height: 300px;
+    color: white;
+    background-image: url('../images/samsungPhotography.jpg');
+    background-size: var(--main-bg-size);
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: var(--main-center-position);
 }
