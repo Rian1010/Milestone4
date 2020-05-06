@@ -6,13 +6,17 @@ $(document).ready(function () {
         scroll_pos = $(this).scrollTop();
         if (scroll_pos < 100) {
             $(".navbar").addClass('orange').removeClass('transparent').css({
-                transition: "1s",
-                height: "100px",
+                transition: ".5s",
+            });
+            $('.nav-link').css({
+                color: "#fff",
             });
         } else if (scroll_pos >= 100) {
             $('.navbar').addClass('transparent').removeClass('orange').css({
                 transition: "1s",
-                height: "60px",
+            });
+            $('.nav-link').css({
+                color: "orange",
             });
         }
     });
@@ -33,10 +37,21 @@ $(document).ready(function () {
             name: "Huawei P30 Pro",
             image: "./static/images/HuaweiP30.jpg",
         },
+        {
+            id: 3,
+            name: "LG V30",
+            image: "./static/images/LG-V30.jpg",
+        },
+        {
+            id: 4,
+            name: "Xiaomi Redmi Note 9 Pro-Max",
+            image: "./static/images/xiaomi.jpg",
+        },
     ]
 
     images.forEach(bName => {
-        $('.brand-example-names-home').append("<div class='brandName'>" + bName.name + "</div>");
+        const brandNameClass = "<div class='brandName'>";
+        $('.brand-example-names-home').append(`${brandNameClass + bName.name}</div>`);
         $('.brandName').mouseenter(function () {
             let index = $('.brandName').index(this);
             if (index == bName.id) {
@@ -45,7 +60,6 @@ $(document).ready(function () {
                 });
                 $(this).css({
                     color: "skyblue",
-                    textDecoration: "underline"
                 });
             }
         });
@@ -54,7 +68,6 @@ $(document).ready(function () {
             if (index == bName.id) {
                 $(this).css({
                     color: "black",
-                    textDecoration: "none"
                 });
             }
         })
@@ -63,11 +76,18 @@ $(document).ready(function () {
     // ------------------------------------------ Smartphone Photography Examples ------------------------------------------ //
 
     for (let i = 0; i < 3; i++) {
-        $('#smartphonePhotography${[i]}').mouseenter(function () {
-            $('#smartphonePhotography${[i]}').children().slideDown(500);
+        $(`#smartphonePhotography${[i]}`).mouseenter(function () {
+            $(`#smartphonePhotography${[i]}`).children().slideUp(500).css({"display": "inline"});
         });
-        $('#smartphonePhotography${[i]}').mouseout(function () {
-            $('#smartphonePhotography${[i]}').children().slideUp(500);
+        $(`#smartphonePhotography${[i]}`).mouseout(function () {
+            $(`#smartphonePhotography${[i]}`).children().slideDown(500).css({"display": "none"});
         });
     }
+
+    // ------------------------------------------ Login Username ------------------------------------------ //
+
+    $("input[name = 'username']").keyup(function() {
+        let nameVal = $(this).val();
+        $('.username').text(` ${[nameVal]}`);
+    });
 });

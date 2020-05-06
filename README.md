@@ -18,6 +18,8 @@ https://www.pikist.com/free-photo-xzmyu
 - iPhone 11 Brand Examples: https://pixabay.com/de/illustrations/iphone-iphone-11pro-max-apple-4858453/
 - Samsung S10E Brand Example: https://www.flickr.com/photos/nepaltibet2005/46208893305
 - Huawei P30 Pro Bran Example: https://www.flickr.com/photos/janitors/33595154558
+- LG V30 Example: https://commons.wikimedia.org/wiki/File:LG_V30_(cropped).jpg
+- Xiaomi Redmi Note 9 Pro-Max Example: https://pixabay.com/de/illustrations/xiaomi-redmi-redmi-note-9-pro-max-4936657/
 
 - Huawei Mate 20 Pro Photography: https://www.flickr.com/photos/janitors/31641238948
 - iPhone Photography: https://www.wallpaperflare.com/iphone-photography-golden-gate-bridge-photo-backgrounds-earth-wallpaper-aazxq

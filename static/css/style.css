@@ -9,17 +9,22 @@
 .navbar {
     width: var(--main-width);
     height: 100px;
-    background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f);
+    background-color: rgb(0, 6, 85);
+    color: white;
 }
 
 .orange {
-    background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f);
+    background-color: rgb(0, 6, 85);
     height: 100px;
 }
 
 .transparent {
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
+    background-color: rgba(0,0,0,0);
     height: 60px;
+}
+
+.nav-link {
+    color: "#fff";
 }
 
 /* Sections */
@@ -27,15 +32,28 @@
     padding: 70px 0;
 }
 
-.orange-background {
+.form-page-padding {
+    padding: 150px 0;
+}
+
+.section-margin {
+    margin-top: 100px;
+}
+
+.blue-background {
     /* background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f) */
     background-color: rgb(0, 37, 146);
     color: #fff;
 }
 
-/* Form */
-form {
-    width: 50%;
+.orange-background {
+    background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f);
+}
+
+.form-positioning {
+    display: flex;
+    justify-content: var(--main-center-position);
+    align-items: var(--main-center-position);
 }
 
 /* Carousel */
@@ -114,8 +132,13 @@ form {
 .brand-text {
     cursor: pointer;
     text-align: center;
-    font-size: 36px;
+    font-size: 27px;
     font-weight: 500;
+}
+
+.brandName {
+    margin: 20px 0;
+    text-decoration: underline;
 }
 
 /* Photography Examples */
@@ -171,10 +194,10 @@ form {
     justify-content: flex-end;
     align-self: var(--main-center-position);
 }
-
+/* 
 .img-text {
-    /* display: none; */
-}
+    display: none;
+} */
 .link-to-shop-section {
     width: var(--main-width);
     height: 80vh;
@@ -186,6 +209,15 @@ form {
     display: flex;
     justify-content: var(--main-center-position);
     align-items: var(--main-center-position);
+}
+
+.shop-button {
+    background-color: rgb(255, 175, 25);
+    transition: .2s;
+}
+
+.shop-button:hover {
+    background-color: orange;
 }
 
 footer {
@@ -203,4 +235,13 @@ footer {
 ul {
     list-style-type: none;
     padding: 0;
+    color: orange;
+}
+
+.footer-links {
+    color: orange;
+}
+
+.footer-links:hover {
+    color: orange;
 }

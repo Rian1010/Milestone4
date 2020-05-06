@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% load bootstrap_tags %}
 
 {% block page_title %}
@@ -11,11 +11,27 @@ User Login
 {% endblock %}
 
 {% block content %}
-<section class="section-padding orange-background">
-    <form method="POST">
-        {% csrf_token %} {{ login_form | as_bootstrap }}
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+<section class="form-page-padding section-margin orange-background form-positioning">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>User Login</h1>
+                <h2>Welcome back<span class="username"></span>!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form method="POST">
+                    {% csrf_token %} {{ login_form | as_bootstrap }}
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+            </div>
+        </div>
+    </div>
 </section>
+{% endblock %}
+
+{% block js_tags %}
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
