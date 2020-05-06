@@ -22,3 +22,5 @@ https://www.pikist.com/free-photo-xzmyu
 - Huawei Mate 20 Pro Photography: https://www.flickr.com/photos/janitors/31641238948
 - iPhone Photography: https://www.wallpaperflare.com/iphone-photography-golden-gate-bridge-photo-backgrounds-earth-wallpaper-aazxq
 - Samsung Galaxy S7 Photography: https://www.pexels.com/de-de/foto/samsung-galaxy-s7-rand-schone-blumen-verschwimmen-verwischen-706962/
+
+- Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101

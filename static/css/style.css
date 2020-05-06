@@ -17,7 +17,9 @@
 }
 
 .orange-background {
-    background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f)
+    /* background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f) */
+    background-color: rgb(0, 37, 146);
+    color: #fff;
 }
 
 /* Form */
@@ -106,6 +108,14 @@ form {
 }
 
 /* Photography Examples */
+.examples-section-padding {
+    padding: 30vh 0;
+}
+
+.heading-padding {
+    padding-bottom: 90px;
+}
+
 .huawei-photography {
     width: var(--main-width);
     height: 300px;
@@ -149,4 +159,20 @@ form {
     flex-direction: column;
     justify-content: flex-end;
     align-self: var(--main-center-position);
+}
+
+.img-text {
+    /* display: none; */
+}
+.link-to-shop-section {
+    width: var(--main-width);
+    height: 70vh;
+    color: #333;
+    background-image: url('../images/phone-shopping.jpg');
+    background-size: cover;
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    display: flex;
+    justify-content: var(--main-center-position);
+    align-items: var(--main-center-position);
 }

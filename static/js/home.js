@@ -30,7 +30,7 @@ $(document).ready(function () {
         },
         {
             id: 2,
-            name: "Huawai P30 Pro",
+            name: "Huawei P30 Pro",
             image: "./static/images/HuaweiP30.jpg",
 
         },
@@ -64,10 +64,10 @@ $(document).ready(function () {
     // ------------------------------------------ Smartphone Photography Examples ------------------------------------------ //
 
     for (let i = 0; i < 3; i++) {
-        $(`#smartphonePhotography${[i]}').mouseenter(function () {
+        $('#smartphonePhotography${[i]}').mouseenter(function () {
             $('#smartphonePhotography${[i]}').children().slideDown(500);
         });
-        $("#smartphonePhotography${[i]}').mouseout(function () {
+        $('#smartphonePhotography${[i]}').mouseout(function () {
             $('#smartphonePhotography${[i]}').children().slideUp(500);
         });
     }
