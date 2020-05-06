@@ -1,16 +1,16 @@
 $(document).ready(function () {
     // ------------------------------------------ Navigation Bar ------------------------------------------ //
-    window.addEventListener('DOMContentLoaded', function () {
-        $('.navbar').css({
-            height: "100px",
-            'background-image': "linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f)",
-        });
-    });
 
-    window.addEventListener('scroll', function () {
-        if (window.scrollY >= 10) {
-            $('.navbar').css({
-                'background-image': "linear-gradient(rgba(0,0,0,0))",
+    let scroll_pos = 0;
+    $(document).scroll(function () {
+        scroll_pos = $(this).scrollTop();
+        if (scroll_pos < 100) {
+            $(".navbar").addClass('orange').removeClass('transparent').css({
+                transition: "1s",
+                height: "100px",
+            });
+        } else if (scroll_pos >= 100) {
+            $('.navbar').addClass('transparent').removeClass('orange').css({
                 transition: "1s",
                 height: "60px",
             });
@@ -32,7 +32,6 @@ $(document).ready(function () {
             id: 2,
             name: "Huawei P30 Pro",
             image: "./static/images/HuaweiP30.jpg",
-
         },
     ]
 
