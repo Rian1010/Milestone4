@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row row-flex">
+<div class="row row-flex" style="margin: 200px 0">
     {% for product in products %}
     <div class="col-xs-10 offset-xs--1 offset-sm-0 col-sm-6 col-md-4 display panel panel-default">
         <div class="panel-body">
-            <div class="product" stlye="background-image: url('{{ MEDIA_URL}}{{ product.image }}')">
-
+            <div class="product" stlye="background-image: url('{{ MEDIA_URL}} {{ product.image }}')">
+                <!-- <img src="{{ product.image.id }}" alt=""> -->
                 <h3>{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
                 <p>{{ product.price }}</p>
-
-                <form action="{% url 'add_to_cart' product.id %}" method="POST">
+                <form action="" method="POST">
                     {% csrf_token %}
                     <div class="input-group">
                         <input type="number" name="quantity" min="1" max="999" class="form-control" placeholder="Quantity">
