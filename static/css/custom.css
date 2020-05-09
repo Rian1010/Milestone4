@@ -13,6 +13,11 @@
     color: white;
 }
 
+.badge {
+    padding: 0 10px;
+    border-radius: 50%;
+}
+
 .orange {
     background-color: rgb(0, 6, 85);
     height: 100px;
@@ -54,6 +59,14 @@
     display: flex;
     justify-content: var(--main-center-position);
     align-items: var(--main-center-position);
+}
+
+.item {
+    width: var(--main-width);
+    height: 150px;
+    background-position: var(--main-center-position);
+    background-repeat: var(--main-bg-repeat);
+    background-size: var(--main-bg-size);
 }
 
 /* Carousel */

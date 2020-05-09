@@ -9,7 +9,6 @@ def index(request):
     """Return the index file"""
     return render(request, 'index.html')
 
-
 @login_required
 def logout(request):
     """Logs the user out"""
@@ -34,8 +33,7 @@ def login(request):
                 messages.success(request, "You have successfully logged in!")
                 return redirect(reverse('index'))
             else:
-                login_form.add_error(
-                    None, "Your username or password is incorrect")
+                login_form.add_error(None, "Your username or password is incorrect")
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})

@@ -7,41 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <title>{% block title %}{% endblock %}</title>
-    <style>
-        body {
-        font-family: Arial;
-        padding-top: 100px;
-    }
-    .product {
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 150px;
-        margin: 0 auto;
-    }
-    caption p {
-        word-wrap: break-word;
-    }
-    .row.row-flex {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
-    .panel-default {
-        border-color: transparent;
-        padding: 0 10px;
-    }
-    .panel-body {
-        height: 100%;
-        border: 1px solid #ddd;
-    }
-    .product-description {
-        min-height: 40px;
-    }
-        </style>
 </head>
 
 <body>
@@ -56,12 +24,27 @@
             <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}">Register</a></li>
                 {% endif %}
             </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a  class="nav-link" href="{% url 'cart_views' %}">
+                        <i class="fa fa-shipping-cart"></i> Go to Cart
+                        {% if product_count > 0 %}
+                        <label class="badge badge-warning">{{ product_count }}</label>
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+            <form action="{% url 'search' %}" method="GET" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </nav>
     {% if messages %}
@@ -71,19 +54,8 @@
         {% endfor %}
     </div>
     {% endif %}
+    
     {% block content %}{% endblock %}
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-
-    {% block js_tags %}{% endblock %}
 
     <footer>
         <div class="container">
@@ -107,6 +79,18 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    {% block js_tags %}{% endblock %}
 </body>
 
 </html>
