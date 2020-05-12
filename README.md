@@ -26,3 +26,5 @@ https://www.pikist.com/free-photo-xzmyu
 - Samsung Galaxy S7 Photography: https://www.pexels.com/de-de/foto/samsung-galaxy-s7-rand-schone-blumen-verschwimmen-verwischen-706962/
 
 - Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101
+
+- Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone

@@ -8,3 +8,4 @@ __pycache__/
 *.log
 *.pot
 db.sqlite3
+env.py

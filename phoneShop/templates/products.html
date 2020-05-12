@@ -1,28 +1,55 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<div class="container">
-    <div class="row" style="margin: 200px 0">
-        {% for product in products %}
-        <div class="col-sm-12 col-md-4">
-            <div>
-                <div class="item" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                <h3>{{ product.name }}</h3>
-                <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p>
-                <form action="{% url 'cart_additions' product.id %}" method="POST">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input type="number" name="quantity" min="1" max="999" class="form-control"
-                            placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
-                </form>
+<section class="section-margin phone-shop-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Online Phone Shop</h1>
             </div>
         </div>
-        {% endfor %}
     </div>
-</div>
+</section>
+<section class="section-padding-bottom">
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-sm-12 col-md-4">
+                <div class="product-container">
+                    <div class="product"
+                        style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)), url('{{ MEDIA_URL }}{{ product.image }}')">
+                        <div class="product-info-styling">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h4>{{ product.name }}</h4>
+                                </div>
+                                <div class="offset-1 col-4">
+                                    <p class="align-right">{{ product.price }}€</p>
+                                </div>
+                            </div>
+
+                            <p>{{ product.description }}</p>
+
+                            <form action="{% url 'cart_additions' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="number" name="quantity" min="1" max="999" class="form-control"
+                                        placeholder="Quantity">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-warning" type="submit">Add</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block js_tags %}
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

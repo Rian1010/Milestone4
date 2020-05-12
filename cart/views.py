@@ -8,17 +8,15 @@ def cart_views(request):
 def cart_additions(request, id):
     """Include the requested quantity of a product to the cart"""
     quantity = int(request.POST.get('quantity'))
-    print(quantity)
     shopping_cart = request.session.get("shopping_cart", {})
-    print(shopping_cart)
+    
     if id in shopping_cart:
         shopping_cart[id] = int(shopping_cart[id]) + quantity
-        print(shopping_cart[id], "here")
     else:
         shopping_cart[id] = shopping_cart.get(id, quantity)
 
-    request.session['shopping_cart'] = shopping_cart 
-    print(request.session['shopping_cart'])
+    request.session['shopping_cart'] = shopping_cart
+
     return redirect(reverse('cart_views'))
 
 def cart_adjustments(request, id):

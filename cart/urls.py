@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from .views import cart_views, cart_additions, cart_adjustments 
+from accounts.views import user_profile
 
 urlpatterns = [
     url(r'^$', cart_views, name="cart_views"),
