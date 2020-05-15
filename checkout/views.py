@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .form import OrderForm, MakePayment
+from .forms import OrderForm, MakePayment
 from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
-from product.models import Product
+from phoneShop.models import Product
 import stripe
 
 # Create your views here.
@@ -18,7 +18,7 @@ def checkout(request):
         order_form = OrderForm(request.POST)
         payment_form = MakePayment(request.POST)
 
-        if order_form.is_valid() and payment_form.is_valid:
+        if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
@@ -49,7 +49,7 @@ def checkout(request):
                 request.session['cart'] = {}
                 return redirect(reverse('product'))
             else:
-                messages.error(request, "Unable to take playment")
+                messages.error(request, "Unable to take payment")
         else:
             print(payment_form.errors)
             messages.error(

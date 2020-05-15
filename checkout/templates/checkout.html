@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% load bootstrap_tags %}
 
 {% block content %}
@@ -36,14 +35,36 @@
         </div>
         {% endfor %}
     </div>
-    <div class="container-fluid total-value-position">
-        <p>Total: </p>
-        <p>{{ total }}</p>
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
-    </div>
+    <form role='form' id="payment-form" action="{% url 'checkout' %}" method="post">
+        <legend>Payment Details</legend>
+        <div class="credit-card-errors" style="display: none">
+            <div class="alert-message block-message error" id="stripe-error-message"></div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                {{ order_form| as_bootstrap }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ payment_form|as_bootstrap }}
+            </div>
+            {% csrf_token %}
+            <div class="form-group col-md-6">
+                <input type="submit" value="Pay" class="btn btn-primary" id="submit_payment_btn" name="commit">
+            </div>
+        </div>
+        
+
+    </form>
+
 </section>
 {% endblock %}
 
 {% block js_tags %}
-<script src="{% static 'js/home.js' %}"></script>
+<script src="https://js.stripe.com/v2/"></script>
+<script">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}

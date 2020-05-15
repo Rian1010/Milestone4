@@ -18,6 +18,7 @@ from django.contrib import admin
 from accounts.views import index
 from accounts import urls as accounts_urls
 from phoneShop import urls as url_products
+from checkout import urls as url_checkout
 from search import urls as search_url
 from cart import urls as url_cart
 from django.views import static
@@ -29,6 +30,7 @@ urlpatterns = [
     url(r'^shop/', include(url_products)),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^cart/', include(url_cart)), 
+    url(r'^checkout', include(url_checkout)),
     url(r'^search/', include(search_url)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
