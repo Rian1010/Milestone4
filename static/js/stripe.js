@@ -1,7 +1,6 @@
 $(function () {
-    $('payment-form').submit(function () {
+    $('#payment-form').submit(function () {
         let form = this;
-        console.log(this);
         let card = {
             number: $('#id_credit_card_number').val(),
             expiryMonth: $('#id_expiry_month').val(),
