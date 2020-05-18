@@ -2,9 +2,9 @@
 	"folders": [
 		{
 			"path": ".."
-		},
-		{
-			"path": "../../MemorisationApp"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SimpleCode"
+	}
 }

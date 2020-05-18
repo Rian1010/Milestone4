@@ -3,8 +3,8 @@ $(function () {
         let form = this;
         let card = {
             number: $('#id_credit_card_number').val(),
-            expiryMonth: $('#id_expiry_month').val(),
-            expiryYear: $('id_expiry_year').val(),
+            expMonth: $('#id_expiry_month').val(),
+            expYear: $('#id_expiry_year').val(),
             cvc: $('#id_cvv').val(),
         };
 
@@ -14,13 +14,13 @@ $(function () {
                 $('#id_stripe_id').val(response.id);
                 // Prevent credit card details from being submitted to the server
                 $('#id_credit_card_number').removeAttr('name');
-                $('#cvv').removeAttr('name');
+                $('#id_cvv').removeAttr('name');
                 $('#id_expiry_month').removeAttr('name');
                 $('#id_expiry_year').removeAttr('name');
 
-                form.submit()
+                form.submit();
             } else {
-                $('#stripe-error-messages').text(response.error.message);
+                $('#stripe-error-message').text(response.error.message);
                 $('#credit-card-errors').show();
                 $('#validate_card_btn').attr("disabled", false);
             }
