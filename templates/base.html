@@ -9,12 +9,10 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="{% url 'index' %}">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -49,15 +47,15 @@
         </div>
     </nav>
     {% if messages %}
-    <div>
+    <div class="message-styling">
         {% for message in messages %}
         {{ message }}
         {% endfor %}
     </div>
     {% endif %}
-    
-    {% block content %}{% endblock %}
 
+    {% block content %}{% endblock %}
+    
     <footer>
         <div class="container">
             <div class="row">
@@ -90,6 +88,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     {% block head_js %}{% endblock %}
+
     {% block js_tags %}{% endblock %}
 
 </body>

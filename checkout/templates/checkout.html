@@ -17,7 +17,7 @@
 {% block content %}
 <section class="section-margin section-padding">
     <div class="container text-center">
-        <h1>Shopping Cart</h1>
+        <h1>Checkout</h1>
     </div>
     <div class="container-fluid">
         {% for item in cart_items %}
@@ -33,7 +33,7 @@
                     <h3>{{ item.product.name }}</h3>
                     <p class="product-description">{{ item.product.description }}</p>
                     <p>Price: {{ item.product.price }}€</p>
-                    <p class="input-group-addon">Amount: {{item.quantity}}</p>
+                    <p class="input-group-addon">Amount: {{ item.quantity }}</p>
                     <form class="form-inline" method="post" action="{% url 'cart_adjustments' item.id %}">
                         {% csrf_token %}
                         <label for="" class="sr-only">Quantity</label>
@@ -64,9 +64,10 @@
                 <input type="submit" value="Pay" class="btn btn-primary" id="submit_payment_btn" name="commit">
             </div>
         </div>
-        
-
     </form>
-
 </section>
+{% endblock %}
+
+{% block js_tags %}
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

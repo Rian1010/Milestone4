@@ -5,6 +5,16 @@
     --main-center-position: center;
 }
 
+/* Messages */
+
+.message-styling{
+    padding-top: 120px;
+    text-align: var(--main-center-position);
+    font-size: 32px;
+    font-weight: bold;
+    background-color: rgb(255, 175, 25);
+}
+
 /* Navigation Bar */
 .navbar {
     width: var(--main-width);
