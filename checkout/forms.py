@@ -2,7 +2,7 @@ from django import forms
 from .models import BuyProduct
 
 class MakePayment(forms.Form):
-    MONTHLY_CHOICES = [(i, i) for i in range(1, 12)]
+    MONTHLY_CHOICES = [(i, i) for i in range(1, 13)]
     YEAR_CHOICES = [(i, i) for i in range(2020, 2036)]
 
     credit_card_number = forms.CharField(label = "Credit card number", required = False)
@@ -10,9 +10,15 @@ class MakePayment(forms.Form):
     expiry_month = forms.ChoiceField(label = "Month", choices = MONTHLY_CHOICES, required = False)
     expiry_year = forms.ChoiceField(label = "Year", choices = YEAR_CHOICES, required = False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
+    print(credit_card_number)
+    print(cvv)
+    print(expiry_month)
+    print(expiry_year)
+    print(stripe_id)
 
 class OrderForm(forms.ModelForm):
     class Meta:
         model = BuyProduct
         fields = ('full_name', 'phone_number', 'country', 'postcode', 'town_or_city', 'street_address1', 'street_address2', 'county')
-        
+        print(model)
+        print(fields)
