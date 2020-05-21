@@ -19,30 +19,30 @@ def checkout(request):
         payment_form=MakePayment(request.POST)
 
         if order_form.is_valid() and payment_form.is_valid():
-            order=order_form.save(commit=False)
-            order.date=timezone.now()
+            order = order_form.save(commit=False)
+            order.date = timezone.now()
             order.save()
 
-            cart=request.session.get('shopping_cart', {})             
+            cart = request.session.get('shopping_cart', {})    
             total=0
             for id, quantity in cart.items():
                 product=get_object_or_404(Product, pk=id)
                 total += quantity * product.price
                 order_line_item=OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity,
-                    total=total,
-                    price=product.price,
+                    order = order,
+                    product = product,
+                    quantity = quantity,
+                    total = total,
+                    price = product.price,
                 )
                 order_line_item.save()
             try:
                 # Stripe takes everything in cents, therefore total * 100
-                customer=stripe.Charge.create(
-                    amount=int(total * 100),
-                    currency="EUR",
-                    description=request.user.email,
-                    card=payment_form.cleaned_data['stripe_id'],
+                customer = stripe.Charge.create(
+                    amount = int(total * 100),
+                    currency = "EUR",
+                    description = request.user.email,
+                    card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined")

@@ -9,5 +9,33 @@
 <section class="section-padding">
     <p>username: {{ profile.username }}</p>
     <p>email address: {{ profile.email }}</p>
+    <div class="container">
+        <div class="row">
+            {% for item in product %}
+            <div class="col-sm-12 col-md-6">
+                
+                <p>product: {{ item.name }}</p>
+                <p>description: {{ item.description }}</p>
+                <p>Price: {{ item.price }}</p>
+                <div style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')"></div>
+                
+            </div>
+            {% endfor %}
+            <div class="col-sm-12 col-md-6">
+                {% for user_detail in history %}
+                <p>Username: {{ user_detail.full_name }}</p>
+                <p>Phone Number: {{ user_detail.phone_number }}</p>
+                <p>Country: {{ user_detail.country }}</p>
+                <p>Postcode: {{ user_detail.postcode }}</p>
+                <p>Town/City: {{ user_detail.town_or_city }}</p>
+                <p>Address 1: {{ user_detail.street_address1 }}</p>
+                <p>Address 2: {{ user_detail.street_address2 }}</p>
+                <p>County: {{ user_detail.county }}</p>
+                <p>Date: {{ user_detail.date }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 </section>
 {% endblock %}

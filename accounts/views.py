@@ -3,7 +3,10 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
-
+from phoneShop.models import Product
+from django.utils import timezone
+from checkout.forms import OrderForm, MakePayment
+from checkout.models import OrderLineItem, BuyProduct
 
 def index(request):
     """Return the index file"""
@@ -65,6 +68,16 @@ def registration(request):
 
 def user_profile(request):
     """The user's profile page"""
-    user = User.objects.get(
-        username=request.user.username, email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
+    user = User.objects.get(username=request.user.username, email=request.user.email)
+    history_user_details = BuyProduct.objects.all()
+    history_product = Product.objects.all()
+    return render(request, 'profile.html', {"profile": user, "history": history_user_details, 'product': history_product})
+
+def history(request):
+    """Show a user's history of purchased products"""
+    
+        # if order_form.is_valid() and payment_form.is_valid():
+        #     order = order_form.save(commit=False)
+        #     order.date = timezone.now()
+        #     order.save()
+
