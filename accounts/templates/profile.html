@@ -6,35 +6,32 @@
 {% endblock %}
 
 {% block content %}
-<section class="section-padding">
+<section class="section-padding section-margin">
     <p>username: {{ profile.username }}</p>
     <p>email address: {{ profile.email }}</p>
     <h1>{{ order.id }}</h1>
     <div class="container">
         <div class="row">
-            {% for item in order %}
             <div class="col-sm-12 col-md-6">
                 
-                <p>product: {{ item.full_name }}</p>
-                <p>description: {{ item.description }}</p>
-                <p>Price: {{ item.price }}</p>
+                <p>product: {{ profile.order }}</p>
+                <p>description: {{ profile.product }}</p>
+                <p>Price: {{ profile.price }}</p>
                 <div style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')"></div>
+                <p>Total: {{ profile.total }}</p>
                 
             </div>
-            {% endfor %}
-            <div class="col-sm-12 col-md-6">
-                {% for user_detail in history %}
-                <p>Username: {{ user_detail.full_name }}</p>
-                <p>Phone Number: {{ user_detail.phone_number }}</p>
-                <p>Country: {{ user_detail.country }}</p>
-                <p>Postcode: {{ user_detail.postcode }}</p>
-                <p>Town/City: {{ user_detail.town_or_city }}</p>
-                <p>Address 1: {{ user_detail.street_address1 }}</p>
-                <p>Address 2: {{ user_detail.street_address2 }}</p>
-                <p>County: {{ user_detail.county }}</p>
-                <p>Date: {{ user_detail.date }}</p>
-                {% endfor %}
-            </div>
+            <!-- <div class="col-sm-12 col-md-6">
+                <p>Username: {{ profile.full_name }}</p>
+                <p>Phone Number: {{ profile.phone_number }}</p>
+                <p>Country: {{ profile.country }}</p>
+                <p>Postcode: {{ profile.postcode }}</p>
+                <p>Town/City: {{ profile.town_or_city }}</p>
+                <p>Address 1: {{ profile.street_address1 }}</p>
+                <p>Address 2: {{ profile.street_address2 }}</p>
+                <p>County: {{ profile.county }}</p>
+                <p>Date: {{ profile.date }}</p>
+            </div> -->
         </div>
     </div>
 

@@ -66,22 +66,27 @@ def registration(request):
     return render(request, 'registration.html', {"registration_form": registration_form})
 
 @login_required
-
-
-@login_required
-def user_profile(request, id):
+def user_profile(request, pk=None):
     """The user's profile page"""
-    user = User.objects.get(username=request.user.username, email=request.user.email)
-    order = get_object_or_404(BuyProduct, pk=id)
-    order.save()
-    order_total = 0
-    order_line = OrderLineItem.objects.filter(order=order, product=product)
-    for order in order_line:
-        order_total += order.total
+    user = User.objects.get(username=request.user.username, email=request.user.email, pk=pk)
+
+    # current_user = request.user
+    if request.user.is_authenticated and pk:
+
+        user_id = user.pk
+        order = get_object_or_404(BuyProduct, pk=pk)
+        order.save()
+        order_total = 0
+        order_line = OrderLineItem.objects.filter(order=order)
+        for order in order_line:
+            order_total += order.total
+    else:
+        user = request.user
     return render(request, 'profile.html', {"profile": user, 
                                             "orders": order, 
                                             "order_line": order_line, 
-                                            "order_total": order_total, 
+                                            "order_total": order_total,
+                                            "pk": user_id
                                             })
 
 # def history(request):
