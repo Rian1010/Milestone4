@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -65,16 +65,27 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {"registration_form": registration_form})
 
+@login_required
 
-def user_profile(request):
+
+@login_required
+def user_profile(request, id):
     """The user's profile page"""
     user = User.objects.get(username=request.user.username, email=request.user.email)
-    history_user_details = BuyProduct.objects.all()
-    history_product = Product.objects.all()
-    return render(request, 'profile.html', {"profile": user, "history": history_user_details, 'product': history_product})
+    order = get_object_or_404(BuyProduct, pk=id)
+    order.save()
+    order_total = 0
+    order_line = OrderLineItem.objects.filter(order=order, product=product)
+    for order in order_line:
+        order_total += order.total
+    return render(request, 'profile.html', {"profile": user, 
+                                            "orders": order, 
+                                            "order_line": order_line, 
+                                            "order_total": order_total, 
+                                            })
 
-def history(request):
-    """Show a user's history of purchased products"""
+# def history(request):
+#     """Show a user's history of purchased products"""
     
         # if order_form.is_valid() and payment_form.is_valid():
         #     order = order_form.save(commit=False)

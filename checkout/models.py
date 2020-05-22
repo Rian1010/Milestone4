@@ -17,7 +17,7 @@ class BuyProduct(models.Model):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
     
 class OrderLineItem(models.Model):
-    order=models.ForeignKey(BuyProduct, null=False)
+    order=models.ForeignKey(BuyProduct, null=False, related_name='orders')
     product=models.ForeignKey(Product, null=False)
     quantity=models.IntegerField(blank=False)
     total=models.DecimalField(blank=False, decimal_places=2, max_digits=6, default=0)
