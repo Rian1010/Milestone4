@@ -10,30 +10,42 @@
     <p>username: {{ profile.username }}</p>
     <p>email address: {{ profile.email }}</p>
     <h1>{{ order.id }}</h1>
+    {% for info in infos %}
+    {% for purchase in history %}
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                
-                <p>product: {{ profile.order }}</p>
-                <p>description: {{ profile.product }}</p>
-                <p>Price: {{ profile.price }}</p>
-                <div style="background-image: url('{{ MEDIA_URL }}{{ item.image }}')"></div>
-                <p>Total: {{ profile.total }}</p>
-                
+        <div class="cart-item-style-around">
+            <div class="row">
+                <p>{{ infos.id }}</p>
             </div>
-            <!-- <div class="col-sm-12 col-md-6">
-                <p>Username: {{ profile.full_name }}</p>
-                <p>Phone Number: {{ profile.phone_number }}</p>
-                <p>Country: {{ profile.country }}</p>
-                <p>Postcode: {{ profile.postcode }}</p>
-                <p>Town/City: {{ profile.town_or_city }}</p>
-                <p>Address 1: {{ profile.street_address1 }}</p>
-                <p>Address 2: {{ profile.street_address2 }}</p>
-                <p>County: {{ profile.county }}</p>
-                <p>Date: {{ profile.date }}</p>
-            </div> -->
+            <div class="row">
+                <div class="col-sm-12 col-md-3">
+                    <div style="background-image: url('{{ MEDIA_URL }}{{ history.product.image }}')"></div>
+                </div>
+                <div class="col-sm-12 col-md-3">
+
+                    <p>Product: {{ purchase.product.name }}</p>
+                    <p>Amount: {{ purchase.quantity }}</p>
+                    <p>Price: {{ purchase.product.price }}€</p>
+                    <!-- <p>Total: {{ profile.total }}</p> -->
+
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <p>Date: {{ infos.date }}</p>
+                    <p>Username: {{ infos.full_name }}</p>
+                    <p>Phone Number: {{ profile.phone_number }}</p>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <p>Postcode: {{ profile.postcode }}</p>
+                    <p>Town/City: {{ profile.town_or_city }}</p>
+                    <p>Address 1: {{ profile.street_address1 }}</p>
+                    <p>Address 2: {{ profile.street_address2 }}</p>
+                    <p>County: {{ profile.county }}</p>
+                    <p>Country: {{ profile.country }}</p>
+                </div>
+            </div>
         </div>
     </div>
-
+    {% endfor %}
+    {% endfor %}
 </section>
 {% endblock %}

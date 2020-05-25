@@ -70,25 +70,39 @@ def user_profile(request, pk=None):
     """The user's profile page"""
     user = User.objects.get(username=request.user.username, email=request.user.email, pk=pk)
 
-    # current_user = request.user
-    if request.user.is_authenticated and pk:
+    # test = get_object_or_404(OrderLineItem, pk=1)
+    # print(test.quantity, test.product.name, test.product.price)
+    # return render(request, "profile.html", {"test": test, "profile": user,})
+    if request.user.is_authenticated:
+        orders = BuyProduct.objects.filter(user_account=request.user)
+        # for info in orders:
+        #     user_info = info
+        #     print(user_info)
+        for order in orders:
+            items = order.lineitems.all()
+            # print(items)
+            # for item in items:
+            #     history = item
 
-        user_id = user.pk
-        order = get_object_or_404(BuyProduct, pk=pk)
-        order.save()
-        order_total = 0
-        order_line = OrderLineItem.objects.filter(order=order)
-        for order in order_line:
-            order_total += order.total
+        # order_total = 0
+        # order_line = OrderLineItem.objects.filter(total=total)
+            
+        # for order in order_line:
+        #     order_total += order.total
+
     else:
         user = request.user
+    
     return render(request, 'profile.html', {"profile": user, 
-                                            "orders": order, 
-                                            "order_line": order_line, 
-                                            "order_total": order_total,
-                                            "pk": user_id
+                                            "orders": orders, 
+                                            # "order_total": order_total,
+                                            # "order_line": order_line,
+                                            # "pk": user_id,
+                                            "history": items,
+                                            "infos": orders,
                                             })
 
+    
 # def history(request):
 #     """Show a user's history of purchased products"""
     
