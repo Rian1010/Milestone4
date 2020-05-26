@@ -78,29 +78,48 @@ def user_profile(request, pk=None):
         # for info in orders:
         #     user_info = info
         #     print(user_info)
-        for order in orders:
-            items = order.lineitems.all()
-            # print(items)
-            # for item in items:
-            #     history = item
 
+        history = []
+        for order in orders:
+            for lineitem in order.lineitems.all():
+                history.append(lineitem)
+        print(history)
+
+        # for order in order_line:
+        #     order_total += order.total
+
+        # for order in orders:
+        #     history = order.lineitems.all()
+        #     print(history.quantity, history.total, history.product.price)
+        # history = []
+        # for order in orders:
+        #     history.append(order.lineitems.all())
+        # for i, c in enumerate(history):
+        #     print(c.product.name)
+        #     print(i, c, type(c))
+        # print(history.value_list())
+        # for hist in history:
+        #     print(hist)
         # order_total = 0
         # order_line = OrderLineItem.objects.filter(total=total)
             
-        # for order in order_line:
-        #     order_total += order.total
+        
 
     else:
         user = request.user
     
-    return render(request, 'profile.html', {"profile": user, 
-                                            "orders": orders, 
-                                            # "order_total": order_total,
-                                            # "order_line": order_line,
-                                            # "pk": user_id,
-                                            "history": items,
-                                            "infos": orders,
-                                            })
+    context = {"profile": user, "history": history, "orders": orders,}
+
+    return render(request, 'profile.html', context)
+    
+    # {"profile": user, 
+    #                                         "orders": orders, 
+    #                                         # "order_total": order_total,
+    #                                         # "order_line": order_line,
+    #                                         # "pk": user_id,
+    #                                         "history": history,
+    #                                         "orders": orders,
+    #                                         })
 
     
 # def history(request):

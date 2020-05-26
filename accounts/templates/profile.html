@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block page_title %}{{ user }}'s Profile{% endblock %}
 
 {% block page_heading %}
@@ -10,37 +12,36 @@
     <p>username: {{ profile.username }}</p>
     <p>email address: {{ profile.email }}</p>
     <h1>{{ order.id }}</h1>
-    {% for info in infos %}
+    {% for info in orders %}
     {% for purchase in history %}
+    
     <div class="container">
         <div class="cart-item-style-around">
             <div class="row">
-                <p>{{ infos.id }}</p>
+                <p>{{ info.id }}</p>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-3">
-                    <div style="background-image: url('{{ MEDIA_URL }}{{ history.product.image }}')"></div>
+                    <div class="item" style="background-image: url('{{ MEDIA_URL }}{{ purchase.product.image }}')"></div>
                 </div>
                 <div class="col-sm-12 col-md-3">
-
                     <p>Product: {{ purchase.product.name }}</p>
                     <p>Amount: {{ purchase.quantity }}</p>
                     <p>Price: {{ purchase.product.price }}€</p>
                     <!-- <p>Total: {{ profile.total }}</p> -->
-
                 </div>
                 <div class="col-sm-12 col-md-3">
-                    <p>Date: {{ infos.date }}</p>
-                    <p>Username: {{ infos.full_name }}</p>
-                    <p>Phone Number: {{ profile.phone_number }}</p>
+                    <p>Date: {{ info.date }}</p>
+                    <p>Full Name: {{ info.full_name }}</p>
+                    <p>Phone Number: {{ info.phone_number }}</p>
                 </div>
                 <div class="col-sm-12 col-md-3">
-                    <p>Postcode: {{ profile.postcode }}</p>
-                    <p>Town/City: {{ profile.town_or_city }}</p>
-                    <p>Address 1: {{ profile.street_address1 }}</p>
-                    <p>Address 2: {{ profile.street_address2 }}</p>
-                    <p>County: {{ profile.county }}</p>
-                    <p>Country: {{ profile.country }}</p>
+                    <p>Postcode: {{ info.postcode }}</p>
+                    <p>Town/City: {{ info.town_or_city }}</p>
+                    <p>Address 1: {{ info.street_address1 }}</p>
+                    <p>Address 2: {{ info.street_address2 }}</p>
+                    <p>County: {{ info.county }}</p>
+                    <p>Country: {{ info.country }}</p>
                 </div>
             </div>
         </div>
