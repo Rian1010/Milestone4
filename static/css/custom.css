@@ -367,10 +367,6 @@
     align-self: var(--main-center-position);
 }
 
-.img-text {
-    display: none;
-}
-
 .link-to-shop-section {
     width: var(--main-width);
     height: 80vh;
