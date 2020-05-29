@@ -34,17 +34,9 @@ class TestAccountViews(TestCase):
         self.assertEqual(message.tags, "success")
         self.assertTrue("You have been successfully logged out." in message.message)
 
-    # def test_profile_page(self):
-    #     test_user = User.objects.create_user(username="test", email="test@example.com", password="SecretPassword")      
-    #     self.client.login(username='test', password='SecretPassword') 
-    #     orders = BuyProduct.objects.create(user_account=test_user, full_name="The Username", phone_number="123", 
-    #             country="TheCountry", postcode="902180", town_or_city="TheCity", street_address1="TheStreet",
-    #             street_address2="TheStreetPart2", county="TheCounty", date=timezone.now())
-    #     page = self.client.get("accounts/profile/")
-    #     page.orders = orders    
-    #     self.assertEqual(list(orders)[0].user_account, test_user)
-    #     self.assertEqual(page.status_code, 200)
-
-
-        # self.assertEqual(test_user.errors['password'], ['This field is required.'])
-        # self.assertTrue(test_user.is_valid())
+    def test_profile_page(self):
+        test_user = User.objects.create_user(username="test", email="test@example.com", password="SecretPassword")      
+        self.client.login(username='test', password='SecretPassword') 
+        page = self.client.get("/accounts/profile/{}".format(test_user.id), follow=True)
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "profile.html")
