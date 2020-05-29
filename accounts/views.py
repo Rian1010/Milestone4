@@ -70,9 +70,6 @@ def user_profile(request, pk=None):
     """The user's profile page"""
     user = User.objects.get(username=request.user.username, email=request.user.email, pk=pk)
 
-    # test = get_object_or_404(OrderLineItem, pk=1)
-    # print(test.quantity, test.product.name, test.product.price)
-    # return render(request, "profile.html", {"test": test, "profile": user,})
     if request.user.is_authenticated:
         orders = BuyProduct.objects.filter(user_account=request.user)
         # for info in orders:
@@ -92,35 +89,6 @@ def user_profile(request, pk=None):
 
     return render(request, 'profile.html', context)
 
-    # for order in order_line:
-        #     order_total += order.total
-
-        # for order in orders:
-        #     history = order.lineitems.all()
-        #     print(history.quantity, history.total, history.product.price)
-        # history = []
-        # for order in orders:
-        #     history.append(order.lineitems.all())
-        # for i, c in enumerate(history):
-        #     print(c.product.name)
-        #     print(i, c, type(c))
-        # print(history.value_list())
-        # for hist in history:
-        #     print(hist)
-        # order_total = 0
-        # order_line = OrderLineItem.objects.filter(total=total)
-            
-        
-
-    
-    # {"profile": user, 
-    #                                         "orders": orders, 
-    #                                         # "order_total": order_total,
-    #                                         # "order_line": order_line,
-    #                                         # "pk": user_id,
-    #                                         "history": history,
-    #                                         "orders": orders,
-    #                                         })
 
     
 # def history(request):

@@ -82,6 +82,65 @@ Most of the Django code was heavily inspired from what's been taught at [Code In
 
 I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make most things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
 
+At first, I asked a tutor from Code Institute lots of questions to understand things to tackle this challenge better. So, I tried the following:
+
+```python
+test = get_object_or_404(OrderLineItem, pk=1)
+print(test.quantity, test.product.name, test.product.price)
+return render(request, "profile.html", {"test": test, "profile": user})
+```
+
+In the code above, I wanted to get each primary key of the OrderLineItem and print some of the required information. This then worked, but I could not grab everything that I needed from that model. 
+
+So, after talking to tutors from Code Institute again, explaining more of what I was trying to do, my next try was the following:
+
+```python
+if request.user.is_authenticated:
+    orders = BuyProduct.objects.filter(user_account=request.user)
+
+    for order in orders:
+        history = order.lineitems.all()
+        print(history.quantity, history.total, history.product.price)
+
+     return render(request, 'profile.html', {"profile": user,
+                                            "history": history,
+                                            "orders": orders,
+                                            })
+```
+
+At that point, I thought I had it, because this print statement was printing out the querysets, and the orders were working fine in the templates, but the problem was that the history variable was only available inside of the for loop, so it did not show up in the templates. I tested it by printing the same print statement outside of the for loop and it was empty. 
+
+Therefore, I needed to append `history = order.lineitems.all()` and I failed trying the following things:
+```python
+    history = []
+    for order in orders:
+        history.append(order.lineitems.all())
+    for hist in history:
+        print(hist)
+```
+This code returned querysets again.
+
+```python
+
+    with open('views.py','r') as f:
+            for order in f.orders:
+                history = order.lineitems.all()
+                break
+            
+        print(history)
+```
+I learned this way, above from [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop), [W3Schools](https://www.w3schools.com/python/python_file_handling.asp) and [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
+
+Someone from the course, on Slack, who seems to often help others told me to try the following for loop, so I googled it, trying to understand it and this is what I did:
+
+```python
+for i, c in enumerate(history):
+        print(c.product.name)
+        print(i, c, type(c))
+    print(history.value_list())
+```
+This printed each queryset next to its index number.
+
 ## Testing
 ### Manual Testing
 
