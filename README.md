@@ -221,7 +221,20 @@ $("input[name = 'username']").keyup(function () {
 
 ## Testing
 ### Manual Testing
-
+- Tried to register with wrongly formatted passwords, and also unmatched passwords
+    - Both tests resulted in the correct error messages
+- Tried to register without filling in a required field
+    - The registrations did not work 
+- Registered and logged in
+    - Both tests worked
+- Tried to have access to another web page besides the home by clicking on the available buttons before being logged in
+    - Each page lead me to the login page
+- Logged in and scrolled through each page to make sure that the JavaScript on the navigation bars work correctly
+    - It worked correctly on scroll and the item links work rightly on hover, both on ever page
+- Tried typing something into the username input boxes of the login and registration forms to check if the JavaScript code correctly picked up the values to display the letters above the input fields
+    - Test worked
+- Went to the second section of the home page, where phone brand examples are shown, and hovered over the name of the brand to test if JavaScript would display the picture the of each phone's name rightly according to which name I hover on 
+    - Tests worked
 ### Automated Testing
 
 - Messages and warnings
