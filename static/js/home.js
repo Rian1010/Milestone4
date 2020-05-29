@@ -74,23 +74,6 @@ $(document).ready(function () {
         })
     });
 
-    // ------------------------------------------ Smartphone Photography Examples ------------------------------------------ //
-    // $(window).resize(function() {
-    //     if ($(this).width() < 768) {
-    //         for (let i = 0; i < 6; i++) {
-    //             $(`#smartphonePhotography${[i]}`).mouseenter(function () {
-    //                 $(`#smartphonePhotography${[i]}`).children().slideDown(500).css({
-    //                     "display": "inline"
-    //                 });
-    //             });
-    //             $(`#smartphonePhotography${[i]}`).mouseout(function () {
-    //                 $(`#smartphonePhotography${[i]}`).children().slideUp(500)
-    //             });
-    //         }
-    //     }
-    //   });
-    
-
     // ------------------------------------------ Login Username ------------------------------------------ //
 
     $("input[name = 'username']").keyup(function () {

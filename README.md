@@ -139,7 +139,85 @@ for i, c in enumerate(history):
         print(i, c, type(c))
     print(history.value_list())
 ```
-This printed each queryset next to its index number.
+This printed each queryset next to its index number. So I still could not get the information from the queryset correctly in the template. Then, I showed it to a tutor from Code Institute again, who told me that I have to loop through it twice to get the correct details. It worked and this is what the function looked like at that point.
+
+```python
+@login_required
+def user_profile(request, pk=None):
+    """The user's profile page"""
+    user = User.objects.get(username=request.user.username, email=request.user.email, pk=pk)
+
+    if request.user.is_authenticated:
+        orders = BuyProduct.objects.filter(user_account=request.user)
+
+        history = []
+        for order in orders:
+            for lineitem in order.lineitems.all():
+                history.append(lineitem)
+        print(history)
+        
+    else:
+        user = request.user
+    
+    context = {"profile": user, "orders": orders, "history": history}
+
+    return render(request, 'profile.html', context)
+
+```
+Although it printed out the correct things and I could show the right information on the profile page, I could not show orders and history within the same for loop. I tried using zip or nesting the two for loops and then using an if statement, like so:  
+```html
+{% for info in orders %}
+    {% for purchase in history %}
+        {% if forloop.counter == forloop.parentloop.counter&}
+            <!-- Code goes here in profile.html -->
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+```
+However, this only increased the number of times a previously purchased item was bought by 1, after every other purchase was made. The idea for using zip came from a Stack Overflow page. Click [here](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates) to visit that page. The Stack Overflow page that inspired me for the for loops and if statement in the template can be found by clicking [here](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466) and (this ) So, I looped through the queryset in the template, instead of views.py and it worked, as I wanted! Here is the final code: 
+- views.py
+```python
+@login_required
+def user_profile(request, pk=None):
+    """The user's profile page"""
+    user = User.objects.get(username=request.user.username, email=request.user.email, pk=pk)
+
+    if request.user.is_authenticated:
+        orders = BuyProduct.objects.filter(user_account=request.user)
+        
+    else:
+        user = request.user
+    
+    context = {"profile": user, "orders": orders,}
+
+    return render(request, 'profile.html', context)
+```
+- profile.html
+```html
+{% for order in orders %}
+    {% for lineitem in order.lineitems.all %}
+        <!-- Code goes here in profile.html -->
+    {% endfor %}
+{% endfor %}
+```
+
+In the search app, another challenge was to allow users to search for products with keywords that target both, the name and description of the product, instead of just its name. At first I tried using two variable to filter them separately, which did not work correctly. Later, I found out about Q objects and used the [django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/), as assistance to get it to work in the views.py file of the search app. Here is the code that I ended up writing, which works:
+
+```python
+def search_function(request):
+    products = Product.objects.filter(Q(name__icontains=request.GET['search']) | Q(description__icontains=request.GET['search']))
+    return render(request, "products.html", {"products": products})
+```
+
+### JavaScript
+The JavaScript code was written by myself, except for the code that takes the value that is give by the user through input to display the username that one enters above the input fields. I learned how to write that code from the [jQuery API Documentation](https://api.jquery.com/val/). Here is the code that I am talking about:
+
+```javascript
+$("input[name = 'username']").keyup(function () {
+    let nameVal = $(this).val();
+    $('.username').text(` ${[nameVal]}`);
+});
+```
 
 ## Testing
 ### Manual Testing

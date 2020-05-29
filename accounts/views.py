@@ -72,15 +72,6 @@ def user_profile(request, pk=None):
 
     if request.user.is_authenticated:
         orders = BuyProduct.objects.filter(user_account=request.user)
-        # for info in orders:
-        #     user_info = info
-        #     print(user_info)
-
-        # history = []
-        # for order in orders:
-        #     for lineitem in order.lineitems.all():
-        #         history.append(lineitem)
-        # print(history)
         
     else:
         user = request.user
