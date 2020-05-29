@@ -1,14 +1,101 @@
-## React.JS 
-- npm init -y 
-- npm i -D webpack webpack-cli 
+# Phone-Shop
+This is my fourth Milestone Project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django. 
 
-### Babel
-- npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties
-- npm i react react-dom prop-types
-- Create a .babelrc file with its content in it
-- Create a webpack.config.js file with its content in it
+## Purpose of This Project
+This project is an e-commerce website to sell trending mobile phones from all over the world. Users can easily search for their desired brands that vary at different prices and can choose how many they want to put into a shopping-cart to purchase. 
 
-## Image
+These are the following sections of the website:
+- Home page: As it is the first page that a user gets to see, it contains examples of product that are being sold, examples of smartphone photography and a section for the call to action of buying a product. 
+
+- Login/Registration Page: Enables users to sign in or sign up to visit the rest of the web pages, besides the home page.
+
+- Reset Password Page: Allows a user to reset one's own password.
+
+- Shop Page: The page that contains all products that the website has to offer. A user can add a product from that page to the cart page.
+
+- Cart Page: A logged in user can see the items that one has added into the cart, how much the total price is and each chosen product's details, before checking out. 
+
+- Profile Page: Shows the user account's information and order history.
+
+- Logout: Allows a user to sign out of the website
+
+-Notes: Reset Password, second home page section
+
+## UX
+#### User Stories
+- As a user, I would like to know what kind of phones this website sells
+- As a user, I would like to see interesting things that I could do with a product from the website and quick examples of good phone
+- As a user, I would like to be able to simply search for the keywords of or about a product that I am looking for. 
+- As a user, I would like to add the items that I am interested in, to save them there and see what the total price is.
+- As a user, I would like to enter the required information for me to purchase a product in a simple way and view the items that I bought with the order information, in an order history
+- As a user, I would like see my account details again, before I forget them, and be able to reset the password, in case I do not remember it anymore
+- As a user, I would like to be able to visit the website from multiple devices, if phone, tablet, laptop
+#### Admin Stories
+- As an admin, I would like to sign in to the administration panel
+- As an admin, I would not like a user to have the ability to edit, add or remove product details from the shop page
+
+## Front-End Design
+
+The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](www.theambitious.de) from Jan Ruthard. The colours that I used were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours.
+
+The font that I used was the default sans-serif font-family, as I found it fitting to the website and theme already.
+
+## Wireframes
+
+## Features
+
+## Utilised Technologies
+### Languages
+- HTML5
+- CSS3
+- JavaScript
+- Python3
+
+### Frameworks
+- Django 1.11.24
+- Bootstrap 4
+
+### Database
+- PostgresSql: from Heroku
+- SQLite3: from Django
+
+### API
+- Stripe
+
+### Validators
+
+### Other Tools
+- Github: hosts the website
+- Git: version control
+- Heroku: app Deployment
+- Gunicorn: runs Python applications
+- Travis CI: continiuous integration
+- AWS S3 Bucket: cloud storage
+- VSCode: code editor
+- Psycopg2-Binary: to connect Python to the database
+- Pillow: stores images with the usage of django on the website
+- (MiniWebtool)[https://miniwebtool.com/django-secret-key-generator/]: generates new SECRET_KEY
+
+## Process 
+### Django
+Most of the Django code was heavily inspired from what's been taught at (Code Institute)[https://courses.codeinstitute.net/program/FullstackWebDeveloper]
+
+## Testing
+### Manual Testing
+
+### Automated Testing
+
+- Messages and warnings
+
+## Deployment 
+### Deployment to Github
+
+### Deployment to Heroku
+
+### Amazon Web Services
+
+## Resources 
+### Image
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
 - Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
 or 
@@ -31,6 +118,7 @@ https://www.pikist.com/free-photo-xzmyu
 
 - Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone
 
+## Acknowledgements
 
 ## Coverage
 - sudo pip3 install coverage
