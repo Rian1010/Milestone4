@@ -5,18 +5,18 @@ $(document).ready(function () {
         $(document).scroll(function () {
             scroll_pos = $(this).scrollTop();
             if (scroll_pos < 100) {
-                $(".navbar").addClass('orange').removeClass('transparent').css({
+                $(".navbar").addClass("blue").removeClass('transparent').css({
                     transition: ".5s",
                 });
                 $('.nav-link').css({
                     color: "#fff",
                 });
             } else if (scroll_pos >= 100) {
-                $('.navbar').addClass('transparent').removeClass('orange').css({
+                $('.navbar').addClass('transparent').removeClass("blue").css({
                     transition: "1s",
                 });
                 $('.nav-link').css({
-                    color: "orange",
+                    color: "rgb(255, 188, 65)",
                 });
             }
         });
@@ -51,8 +51,8 @@ $(document).ready(function () {
     ]
 
     images.forEach(bName => {
-        const brandNameClass = "<div class='brandName'>";
-        $('.brand-example-names-home').append(`${brandNameClass + bName.name}</div>`);
+        const brandNameClass = "<span class='brandName'>";
+        $('.brand-example-names-home').append(`${brandNameClass + bName.name}</span>`);
         $('.brandName').mouseenter(function () {
             let index = $('.brandName').index(this);
             if (index == bName.id) {
@@ -76,7 +76,7 @@ $(document).ready(function () {
 
     // ------------------------------------------ Smartphone Photography Examples ------------------------------------------ //
     $(window).resize(function() {
-        if ($(this).width() > 768) {
+        if ($(this).width() < 768) {
             for (let i = 0; i < 6; i++) {
                 $(`#smartphonePhotography${[i]}`).mouseenter(function () {
                     $(`#smartphonePhotography${[i]}`).children().slideDown(500).css({

@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
 from phoneShop.models import Product
 
+
 def cart_contents(request):
     """
     Sets cart ready for the rendering of the page
