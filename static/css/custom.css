@@ -7,12 +7,20 @@
 
 /* Messages */
 
-.message-styling{
+.message-styling {
+    height: 280px;
     padding-top: 120px;
     text-align: var(--main-center-position);
     font-size: 32px;
     font-weight: bold;
     background-color: rgb(255, 175, 25);
+    color: #fff;
+}
+
+@media (min-width: 576px) {
+    .message-styling {
+        height: 190px;
+    }
 }
 
 /* Navigation Bar */
@@ -23,6 +31,14 @@
     color: white;
 }
 
+/* Bootstrap Collapsible Navigation Bar */
+.collapse.show {
+    display: block;
+    background-color: rgb(0, 6, 85);
+}
+
+
+/* Navigation Bar */
 .badge {
     padding: 0 10px;
     border-radius: 50%;
@@ -34,12 +50,12 @@
 }
 
 .transparent {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     height: 60px;
 }
 
-.nav-link {
-    color: "#fff";
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
 }
 
 /* Sections */
@@ -53,6 +69,7 @@
 
 .section-margin {
     margin-top: 100px;
+    min-height: 60vh;
 }
 
 .blue-background {
@@ -62,7 +79,11 @@
 }
 
 .orange-background {
-    background-image: linear-gradient(300deg, #ff7700,#ffa74d,#ffd89f);
+    background-image: linear-gradient(300deg, #ff7700, #ffa74d, #ffd89f);
+}
+
+.h2-padding-top {
+    padding-top: 20px;
 }
 
 .form-positioning {
@@ -70,6 +91,8 @@
     justify-content: var(--main-center-position);
     align-items: var(--main-center-position);
 }
+
+/* Product Page */
 
 .product {
     width: var(--main-width);
@@ -90,13 +113,20 @@
 .product-info-styling {
     width: 100%;
     position: absolute;
-    top: 220px;
-    left: 40px;
+    top: 250px;
     padding: 0 10px;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
+@media (min-width: 768px) {
+    .product-info-styling {
+        top: 220px;
+        left: 40px;
+    }
+}
+
 
 .align-right {
     text-align: right;
@@ -105,7 +135,7 @@
 .phone-shop-banner {
     width: var(--main-width);
     height: 70vh;
-    background-image:  linear-gradient(rgba(255, 255, 255, .2), rgba(0,0,0, 0.1), rgba(255, 255, 255, .1)),url('../images/phone-shop-banner.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(0, 0, 0, 0.1), rgba(255, 255, 255, .1)), url('../images/phone-shop-banner.jpg');
     background-size: cover;
     background-repeat: var(--main-bg-repeat);
     background-position: var(--main-center-position);
@@ -127,7 +157,16 @@
     width: var(--main-width);
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: var(--main-center-position);
+    padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .cart-info-text {
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 0px;
+    }
 }
 
 .cart-item-style-around {
@@ -138,7 +177,13 @@
 
 .total-value-position {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .total-value-position {
+        justify-content: flex-end;
+    }
 }
 
 .item {
@@ -150,7 +195,7 @@
 }
 
 /* Carousel */
-.carousel {
+.carousel-margin-top {
     margin-top: 100px;
 }
 
@@ -162,7 +207,7 @@
 .personal-life-smartphone-banner {
     width: var(--main-width);
     height: 70vh;
-    background-image:  linear-gradient(rgba(0,0,0,0), rgba(0, 0, 0, .4)),url('../images/main-smartphone-banner.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('../images/main-smartphone-banner.jpg');
     background-size: cover;
     background-repeat: var(--main-bg-repeat);
     background-position: var(--main-center-position);
@@ -192,7 +237,7 @@
 .smartphone-journey-banner {
     width: var(--main-width);
     height: 70vh;
-    background-image: linear-gradient(rgba(255,255,255, .1), rgba(0, 0, 0, .2)), url('../images/PhoneAndWork.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(0, 0, 0, .2)), url('../images/PhoneAndWork.jpg');
     background-size: cover;
     background-repeat: var(--main-bg-repeat);
     background-position: top;
@@ -259,10 +304,28 @@
     align-self: var(--main-center-position);
 }
 
+.lg-photography {
+    width: var(--main-width);
+    height: 300px;
+    color: white;
+    margin-top: 37px;
+    text-align: var(--main-center-position);
+    background-image: url('../images/LG-photography.jpg');
+    background-size: var(--main-bg-size);
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: var(--main-center-position);
+}
+
 .iphone-photography {
     width: var(--main-width);
     height: 500px;
     color: white;
+    margin-top: 70px;
     text-align: var(--main-center-position);
     background-image: url('../images/iPhonePhotography.jpg');
     background-size: var(--main-bg-size);
@@ -287,10 +350,26 @@
     justify-content: flex-end;
     align-self: var(--main-center-position);
 }
-/* 
+
+.iphone-photography2 {
+    width: var(--main-width);
+    height: 300px;
+    color: white;
+    margin-top: 20px;
+    background-image: url('../images/iphone-photography2.jpg');
+    background-size: var(--main-bg-size);
+    background-repeat: var(--main-bg-repeat);
+    background-position: var(--main-center-position);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: var(--main-center-position);
+}
+
 .img-text {
     display: none;
-} */
+}
+
 .link-to-shop-section {
     width: var(--main-width);
     height: 80vh;

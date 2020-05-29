@@ -16,7 +16,7 @@ def index(request):
 def logout(request):
     """Logs the user out"""
     auth.logout(request)
-    messages.success(request, "You have been successfully logged out")
+    messages.success(request, "You have been successfully logged out.")
     return redirect(reverse('index'))
 
 
@@ -33,10 +33,10 @@ def login(request):
 
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully logged in!")
+                messages.success(request, "You have successfully logged in.")
                 return redirect(reverse('index'))
             else:
-                login_form.add_error(None, "Your username or password is incorrect")
+                login_form.add_error(None, "Your username or password is incorrect.")
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
@@ -79,13 +79,20 @@ def user_profile(request, pk=None):
         #     user_info = info
         #     print(user_info)
 
-        history = []
-        for order in orders:
-            for lineitem in order.lineitems.all():
-                history.append(lineitem)
-        print(history)
+        # history = []
+        # for order in orders:
+        #     for lineitem in order.lineitems.all():
+        #         history.append(lineitem)
+        # print(history)
+        
+    else:
+        user = request.user
+    
+    context = {"profile": user, "orders": orders,}
 
-        # for order in order_line:
+    return render(request, 'profile.html', context)
+
+    # for order in order_line:
         #     order_total += order.total
 
         # for order in orders:
@@ -105,12 +112,6 @@ def user_profile(request, pk=None):
             
         
 
-    else:
-        user = request.user
-    
-    context = {"profile": user, "history": history, "orders": orders,}
-
-    return render(request, 'profile.html', context)
     
     # {"profile": user, 
     #                                         "orders": orders, 

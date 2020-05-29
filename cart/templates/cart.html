@@ -8,7 +8,14 @@
     <div class="container text-center">
         <h1>Shopping Cart</h1>
     </div>
-    <div class="container-fluid">
+    <div class="container">
+        {% if total == 0 %}
+        <div class="row">
+            <div class="col-12 text-center h2-padding-top">
+                <h4>There are no items in the shopping-cart.</h4>
+            </div>
+        </div>
+        {% else %}
         {% for item in cart_items %}
         <div class="cart-item-style-around">
             <div class="row">
@@ -25,21 +32,33 @@
                     <p class="input-group-addon">Amount: {{item.quantity}}</p>
                     <form class="form-inline" method="post" action="{% url 'cart_adjustments' item.id %}">
                         {% csrf_token %}
-                        <label for="" class="sr-only">Quantity</label>
-                        <input name="quantity" type="number" min="0" max="999" class="form-control">
-                        <button type="submit" class="btn btn-primary">
+                        <div class="form-group">
+                            <label for="" class="sr-only">Quantity</label>
+                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                        </div>
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary total-value-position">
                             Amend
                         </button>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
         {% endfor %}
+        {% endif %}
     </div>
-    <div class="container-fluid total-value-position">
-        <p>Total: </p>
-        <p>{{ total }}</p>
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 total-value-position">
+                <p>Total: {{ total }}€</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 total-value-position">
+                <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}

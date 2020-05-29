@@ -1,25 +1,26 @@
 $(document).ready(function () {
     // ------------------------------------------ Navigation Bar ------------------------------------------ //
-
-    let scroll_pos = 0;
-    $(document).scroll(function () {
-        scroll_pos = $(this).scrollTop();
-        if (scroll_pos < 100) {
-            $(".navbar").addClass('orange').removeClass('transparent').css({
-                transition: ".5s",
-            });
-            $('.nav-link').css({
-                color: "#fff",
-            });
-        } else if (scroll_pos >= 100) {
-            $('.navbar').addClass('transparent').removeClass('orange').css({
-                transition: "1s",
-            });
-            $('.nav-link').css({
-                color: "orange",
-            });
-        }
-    });
+    $(window).on('load', function () {
+        let scroll_pos = 0;
+        $(document).scroll(function () {
+            scroll_pos = $(this).scrollTop();
+            if (scroll_pos < 100) {
+                $(".navbar").addClass('orange').removeClass('transparent').css({
+                    transition: ".5s",
+                });
+                $('.nav-link').css({
+                    color: "#fff",
+                });
+            } else if (scroll_pos >= 100) {
+                $('.navbar').addClass('transparent').removeClass('orange').css({
+                    transition: "1s",
+                });
+                $('.nav-link').css({
+                    color: "orange",
+                });
+            }
+        });
+    })
 
     // ------------------------------------------ Brand Examples ------------------------------------------ //
     const images = [{
@@ -74,19 +75,25 @@ $(document).ready(function () {
     });
 
     // ------------------------------------------ Smartphone Photography Examples ------------------------------------------ //
-
-    for (let i = 0; i < 3; i++) {
-        $(`#smartphonePhotography${[i]}`).mouseenter(function () {
-            $(`#smartphonePhotography${[i]}`).children().slideUp(500).css({"display": "inline"});
-        });
-        $(`#smartphonePhotography${[i]}`).mouseout(function () {
-            $(`#smartphonePhotography${[i]}`).children().slideDown(500).css({"display": "none"});
-        });
-    }
+    $(window).resize(function() {
+        if ($(this).width() > 768) {
+            for (let i = 0; i < 6; i++) {
+                $(`#smartphonePhotography${[i]}`).mouseenter(function () {
+                    $(`#smartphonePhotography${[i]}`).children().slideDown(500).css({
+                        "display": "inline"
+                    });
+                });
+                $(`#smartphonePhotography${[i]}`).mouseout(function () {
+                    $(`#smartphonePhotography${[i]}`).children().slideUp(500)
+                });
+            }
+        }
+      });
+    
 
     // ------------------------------------------ Login Username ------------------------------------------ //
 
-    $("input[name = 'username']").keyup(function() {
+    $("input[name = 'username']").keyup(function () {
         let nameVal = $(this).val();
         $('.username').text(` ${[nameVal]}`);
     });

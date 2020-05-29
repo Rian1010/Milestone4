@@ -9,7 +9,11 @@
 {% block content %}
 <!-- Carousel -->
 <section>
+    {% if messages %}
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    {% else %}
+    <div id="carouselExampleIndicators" class="carousel carousel-margin-top slide" data-ride="carousel">
+    {% endif %}
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -48,7 +52,7 @@
 <!-- Brand Examples -->
 <section class="examples-section-padding">
     <div class="container-fluid">
-        <div class="row justify-content-center heading-padding">
+        <div class="row justify-content-center text-center heading-padding">
             <h2>Find The Best Phones By Multiple Brands At All Prices!</h2>
         </div>
         <div class="row">
@@ -56,7 +60,7 @@
                 <div class="brand-examples-pictures-home brand-img initial-brand-img" id="brandEgPicsHome"></div>
             </div>
             <div class="col-sm-12 col-md-6 justify-content-center align-self-center">
-                    <h3 class="brand-example-names-home brand-text" id="brandEgNamesHome"></h3>
+                <h3 class="brand-example-names-home brand-text" id="brandEgNamesHome"></h3>
             </div>
         </div>
     </div>
@@ -74,19 +78,28 @@
                         <h3>Taken With Huawei Mate 20 Pro</h3>
                     </div>
                 </div>
-
-            </div>
-            <div class="col-sm-12 col-md-4 text-center">
-                <div class="iphone-photography" id="smartphonePhotography2">
+                <div class="lg-photography" id="smartphonePhotography2">
                     <div class="img-text">
-                        <h3>Taken With iPhone</h3>
+                        <h3>With an LG Phone</h3>
                     </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-4 text-center">
-                <div class="samsung-photography" id="smartphonePhotography3">
+                <div class="iphone-photography" id="smartphonePhotography3">
+                    <div class="img-text">
+                        <h3>With an iPhone</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 text-center">
+                <div class="samsung-photography" id="smartphonePhotography4">
                     <div class="img-text">
                         <h3>Taken With Samsung Galaxy S7</h3>
+                    </div>
+                </div>
+                <div class="iphone-photography2" id="smartphonePhotography5">
+                    <div class="img-text">
+                        <h3>With an iPhone</h3>
                     </div>
                 </div>
             </div>

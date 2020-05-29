@@ -5,13 +5,13 @@ from django import forms
 
 # Create your models here.
 class BuyProduct(models.Model):
-    user_account=models.ForeignKey(User, null=False, related_name='user_account', default=1)
-    full_name=models.CharField(max_length=50, blank=False)
-    phone_number=models.CharField(max_length=20, blank=False)
-    country=models.CharField(max_length=40, blank=False)
-    postcode=models.CharField(max_length=20, blank=True)
-    town_or_city=models.CharField(max_length=40, blank=False)
-    street_address1=models.CharField(max_length=40, blank=False)
+    user_account = models.ForeignKey(User, null=False, related_name='user_account', default=1)
+    full_name = models.CharField(max_length=50, blank=False)
+    phone_number = models.CharField(max_length=20, blank=False)
+    country = models.CharField(max_length=40, blank=False)
+    postcode = models.CharField(max_length=20, blank=True)
+    town_or_city = models.CharField(max_length=40, blank=False)
+    street_address1 = models.CharField(max_length=40, blank=False)
     street_address2=models.CharField(max_length=40, blank=True)
     county=models.CharField(max_length=40, blank=False)
     date=models.DateField()
