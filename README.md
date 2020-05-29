@@ -36,7 +36,7 @@ These are the following sections of the website:
 
 ## Front-End Design
 
-The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](www.theambitious.de) from Jan Ruthard. The colours that I used were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours.
+The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](https://www.ambitious-consulting.de/) from Jan Ruthard. The colours that I used were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours.
 
 The font that I used was the default sans-serif font-family, as I found it fitting to the website and theme already.
 
@@ -74,11 +74,13 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 - VSCode: code editor
 - Psycopg2-Binary: to connect Python to the database
 - Pillow: stores images with the usage of django on the website
-- (MiniWebtool)[https://miniwebtool.com/django-secret-key-generator/]: generates new SECRET_KEY
+- [MiniWebtool](https://miniwebtool.com/django-secret-key-generator/): generates new SECRET_KEY
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at (Code Institute)[https://courses.codeinstitute.net/program/FullstackWebDeveloper]
+Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://courses.codeinstitute.net/program/FullstackWebDeveloper). I used the code that I learned from them for user authorisation and authentication in the accounts app, a lot in the search app, phoneShope app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The things codes that I learned from the course are indicated with comments in their files.
+
+I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make most things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
 
 ## Testing
 ### Manual Testing
