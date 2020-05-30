@@ -26,7 +26,7 @@ $(document).ready(function () {
     const images = [{
             id: 0,
             name: "Samsung Galaxy S10E",
-            image: "../images/samsungS10E.jpg",
+            image: "https://django-ecommerce-rian.s3.eu-central-1.amazonaws.com/static/images/samsungS10E.jpg",
         },
         {
             id: 1,
@@ -36,12 +36,12 @@ $(document).ready(function () {
         {
             id: 2,
             name: "Huawei P30 Pro",
-            image: "../images/HuaweiP30.jpg",
+            image: "https://django-ecommerce-rian.s3.eu-central-1.amazonaws.com/static/images/HuaweiP30.jpg",
         },
         {
             id: 3,
             name: "LG V30",
-            image: "../images/LG-V30.jpg",
+            image: "https://django-ecommerce-rian.s3.eu-central-1.amazonaws.com/static/images/LG-V30.jpg",
         },
         {
             id: 4,
