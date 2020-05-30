@@ -237,7 +237,7 @@ $("input[name = 'username']").keyup(function () {
     - Tests worked
 - Checked if the design on each page looks fine responsively and if it is easy to use
     - Everything is fine now
-- Went to the shop page and tried adding items to the cart buy clicking on the arrows that appear in the input field and tried changing the number manually too
+- Went to the shop page and tried adding items to the cart by inserting a number into the input field of an item to specify the quantity of the item
     - Tests worked
 - Clicked on the add button without inserting a number into the field of an item in the shop page
     - Showed correctly that an input in required
@@ -263,8 +263,6 @@ $("input[name = 'username']").keyup(function () {
     - Test worked
 - Checked if I could reset my account's password on the password reset page
     - Test worked
-- Checked if all CSS hover effects worked correctly in the navigation bar
-    - Tests worked correctly
 - Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct message
     - Tests worked, the account was logged off and the correct message showed up
 ### Automated Testing
@@ -313,6 +311,7 @@ $("input[name = 'username']").keyup(function () {
 <CORSRule>
 <AllowedOrigin>*</AllowedOrigin>
 <AllowedMethod>GET</AllowedMethod>
+<AllowedMethod>HEAD</AllowedMethod>
 <MaxAgeSeconds>3000</MaxAgeSeconds>
 <AllowedHeader>Authorization</AllowedHeader>
 </CORSRule>

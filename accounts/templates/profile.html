@@ -39,7 +39,8 @@
                 <div class="col-sm-12 col-md-3">
                     <p>Product: {{ lineitem.product.name }}</p>
                     <p>Amount: {{ lineitem.quantity }}</p>
-                    <p>Price: {{ lineitem.price }}€</p>
+                    <p>Price per item: {{ lineitem.price }}€</p>
+                    <p>Price: {{ lineitem.total }}€</p>
                 </div>
                 <div class="col-sm-12 col-md-3">
                     <p>Date: {{ order.date }}</p>

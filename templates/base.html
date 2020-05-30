@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -21,18 +22,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'profile' pk=user.pk %}">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'profile' pk=user.pk %}"><i class="fa fa-user"></i> Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'products' %}"><i class="fa fa-shopping-basket"></i> Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
                 {% endif %}
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a  class="nav-link" href="{% url 'cart_views' %}">
-                        <i class="fa fa-shipping-cart"></i> Go to Cart
+                        {% if user.is_authenticated %}
+                        <i class="fa fa-shopping-cart"></i> Go to Cart
+                        {% endif %}
                         {% if product_count > 0 %}
                         <label class="badge badge-warning">{{ product_count }}</label>
                         {% endif %}

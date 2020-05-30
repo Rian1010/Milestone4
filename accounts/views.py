@@ -72,21 +72,16 @@ def user_profile(request, pk=None):
 
     if request.user.is_authenticated:
         orders = BuyProduct.objects.filter(user_account=request.user)
-        
+
+        total_price = []
+        for order in orders:
+            for lineitem in order.lineitems.all():
+                total = lineitem.price * lineitem.quantity
+                total_price.append(total)
     else:
         user = request.user
     
-    context = {"profile": user, "orders": orders,}
+    context = {"profile": user, "orders": orders, "total_price": total_price}
 
     return render(request, 'profile.html', context)
-
-
-    
-# def history(request):
-#     """Show a user's history of purchased products"""
-    
-        # if order_form.is_valid() and payment_form.is_valid():
-        #     order = order_form.save(commit=False)
-        #     order.date = timezone.now()
-        #     order.save()
 
