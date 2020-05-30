@@ -270,7 +270,7 @@ https://www.pikist.com/free-photo-xzmyu
 
 - Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
 
-## Acknowledgements
+## Acknowledgements 
 
 ## Coverage
 - sudo pip3 install coverage
