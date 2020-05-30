@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/Rian1010/Milestone4.svg?branch=master)](https://travis-ci.org/Rian1010/Milestone4)
-
 # Phone-Shop
 This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django. 
 
@@ -239,7 +237,7 @@ $("input[name = 'username']").keyup(function () {
     - Tests worked
 - Checked if the design on each page looks fine responsively and if it is easy to use
     - Everything is fine now
-- Went to the shop page and tried adding items to the cart by inserting a number into the input field of an item to specify the quantity of the item
+- Went to the shop page and tried adding items to the cart buy clicking on the arrows that appear in the input field and tried changing the number manually too
     - Tests worked
 - Clicked on the add button without inserting a number into the field of an item in the shop page
     - Showed correctly that an input in required
