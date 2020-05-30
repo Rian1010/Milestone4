@@ -268,7 +268,7 @@ https://www.pikist.com/free-photo-xzmyu
 
 - Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101
 
-- Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone
+- Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
 
 ## Acknowledgements
 
