@@ -1,10 +1,10 @@
 # Phone-Shop
-This is my fourth Milestone Project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django. 
+This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django. 
 
 ## Purpose of This Project
 This project is an e-commerce website to sell trending mobile phones from all over the world. Users can easily search for their desired brands that vary at different prices and can choose how many they want to put into a shopping-cart to purchase. 
 
-These are the following sections of the website:
+These are the following sections of te website:
 - Home page: As it is the first page that a user gets to see, it contains examples of product that are being sold, examples of smartphone photography and a section for the call to action of buying a product. 
 
 - Login/Registration Page: Enables users to sign in or sign up to visit the rest of the web pages, besides the home page.
