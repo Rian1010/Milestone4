@@ -67,6 +67,7 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 ### Validators
 
 ### Other Tools
+- jQuery
 - Github: hosts the website
 - Git: version control
 - Heroku: app Deployment
@@ -80,7 +81,7 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://courses.codeinstitute.net/program/FullstackWebDeveloper). I used the code that I learned from them for user authorisation and authentication in the accounts app, a lot in the search app, phoneShope app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The things codes that I learned from the course are indicated with comments in their files.
+Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them for user authorisation and authentication in the accounts app, a lot in the search app, phoneShope app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The things codes that I learned from the course are indicated with comments in their files.
 
 I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make most things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
 

@@ -26,27 +26,27 @@ $(document).ready(function () {
     const images = [{
             id: 0,
             name: "Samsung Galaxy S10E",
-            image: "./static/images/samsungS10E.jpg",
+            image: "../images/samsungS10E.jpg",
         },
         {
             id: 1,
             name: "iPhone 11",
-            image: "./static/images/iphone.png",
+            image: "../images/iphone.png",
         },
         {
             id: 2,
             name: "Huawei P30 Pro",
-            image: "./static/images/HuaweiP30.jpg",
+            image: "../images/HuaweiP30.jpg",
         },
         {
             id: 3,
             name: "LG V30",
-            image: "./static/images/LG-V30.jpg",
+            image: "../images/LG-V30.jpg",
         },
         {
             id: 4,
             name: "Xiaomi Redmi Note 9 Pro-Max",
-            image: "./static/images/xiaomi.jpg",
+            image: "../images/xiaomi.jpg",
         },
     ]
 
