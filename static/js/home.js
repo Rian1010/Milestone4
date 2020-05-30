@@ -31,7 +31,7 @@ $(document).ready(function () {
         {
             id: 1,
             name: "iPhone 11",
-            image: "../images/iphone.png",
+            image: "https://django-ecommerce-rian.s3.eu-central-1.amazonaws.com/static/images/iphone.png",
         },
         {
             id: 2,
@@ -46,7 +46,7 @@ $(document).ready(function () {
         {
             id: 4,
             name: "Xiaomi Redmi Note 9 Pro-Max",
-            image: "../images/xiaomi.jpg",
+            image: "https://django-ecommerce-rian.s3.eu-central-1.amazonaws.com/static/images/xiaomi.jpg",
         },
     ]
 
