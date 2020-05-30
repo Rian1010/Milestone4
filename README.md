@@ -235,52 +235,58 @@ $("input[name = 'username']").keyup(function () {
     - Test worked
 - Went to the second section of the home page, where phone brand examples are shown, and hovered over the name of the brand to test if JavaScript would display the picture the of each phone's name rightly according to which name I hover on 
     - Tests worked
+- Checked if the design on each page looks fine responsively and if it is easy to use
+    - Everything is fine now
+- Went to the shop page and tried adding items to the cart buy clicking on the arrows that appear in the input field and tried changing the number manually too
+    - Tests worked
+- Clicked on the add button without inserting a number into the field of an item in the shop page
+    - Showed correctly that an input in required
+- Clicked on the add button after inserting a number into the input field
+    - Correctly lead me to the cart page with the right information of the added item 
+- Added more items to the cart field
+    - Each item was displayed correctly with the right total price at the bottom 
+- Clicked on the checkout button to pay
+    - It lead me to the right checkout page and displayed the correct items that were being bought
+- After entering the testing information into the fields, (with 4242 4242 4242 4242 as test credit card number and 111 as security code), I clicked on the pay button
+    - It correctly lead me to the home page, showing the correct message
+- Checked if the user's profile information and order history would show up correctly on the profile page
+    - Both were rightly displayed with the correct user information and details of each purchased product
+- Tried adding an item to the cart page, inserted a number in the input field next to the amend button and then clicked on the button to change the product's quantity
+    - Test worked
+- Tried adding an item to the cart page, went to the checkout page, inserted a number in the input field next to the amend button and then clicked on the button to change the product's quantity
+    - Test worked
+- Tested if amending an item to 0 on the cart and checkout page would delete an item from both pages
+    - Both tests worked
+- Tested if the cart page would display the correct text and remove the checkout button, when there was no item inside
+    - Tests worked
+- Checked if the correct number showed up next to the 'Go to Cart' button in the navigation bar, if there were items in the cart
+    - Test worked
+- Checked if I could reset my account's password on the password reset page
+    - Test worked
+- Checked if all CSS hover effects worked correctly in the navigation bar
+    - Tests worked correctly
+- Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct message
+    - Tests worked, the account was logged off and the correct message showed up
 ### Automated Testing
 
-- Messages and warnings
+
+### Installing and Using Coverage
+- sudo pip3 install coverage
+- coverage run manage.py test
+- coverage run --source=app_name manage.py test
+- coverage report (Shows how much code has been tested)
+- coverage html
+- Display the HTML page to see the parts of an app that needs to be tested
 
 ## Deployment 
 ### Deployment to Github
+- git add .
+- git status
+- git commit -m "a short description of the update"
+- git remote add origin 
+- git push origin master
 
-### Deployment to Heroku
-
-### Amazon Web Services
-
-## Resources 
-### Image
-- Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
-- Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
-or 
-https://www.pikist.com/free-photo-xzmyu
-- Smartphone Journey Banner: https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa
-
-- iPhone 11 Brand Examples: https://pixabay.com/de/illustrations/iphone-iphone-11pro-max-apple-4858453/
-- Samsung S10E Brand Example: https://www.flickr.com/photos/nepaltibet2005/46208893305
-- Huawei P30 Pro Bran Example: https://www.flickr.com/photos/janitors/33595154558
-- LG V30 Example: https://commons.wikimedia.org/wiki/File:LG_V30_(cropped).jpg
-- Xiaomi Redmi Note 9 Pro-Max Example: https://pixabay.com/de/illustrations/xiaomi-redmi-redmi-note-9-pro-max-4936657/
-
-- Huawei Mate 20 Pro Photography: https://www.flickr.com/photos/janitors/31641238948
-- iPhone Photography: https://www.wallpaperflare.com/iphone-photography-golden-gate-bridge-photo-backgrounds-earth-wallpaper-aazxq
-- Samsung Galaxy S7 Photography: https://www.pexels.com/de-de/foto/samsung-galaxy-s7-rand-schone-blumen-verschwimmen-verwischen-706962/
-- LG Photography: https://www.pxfuel.com/en/free-photo-qfbiw
-- iPhone photography: https://www.pxfuel.com/en/free-photo-qwtlx
-
-- Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101
-
-- Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
-
-## Acknowledgements 
-
-## Coverage
-- sudo pip3 install coverage
-- coverage run manage.py test
-- coverage report 
-- coverage run --source=accounts manage.py test
-- coverage report (Shows how much code has been tested)
-- coverage html
-
-## Heroku Deployment
+### Heroku Deployment
 - In Resources, add Heroku Postgres in add-ons
 - Get the DATABASE_URL in the conguration variables and copy it into the env.py file
 - os.environ.setdefault("DATABASE_URL", "postgres://---")
@@ -290,9 +296,11 @@ https://www.pikist.com/free-photo-xzmyu
 - pip3 freeze > requirements.txt
 - import dj_database_url in settings.py
 - Switch DATABASE to postgres in settings.py
-- Migrate the existing migrations to the postgres database, although there are no changes detected through python3 manage.py makemigrations
+- Migrate the existing migrations to the postgres database, although there are no changes detected through python3 manage.py makemigrations (use the following commands: `python3 manage.py makemigrations`, `python3 manage.py migrate`)
 
-## Amazon Web Services
+- For the website to work on Heroku, the statics must be disabled, through `DISABLE_COLLECTSTATIC=1`
+
+### Amazon Web Services
 - Once logged in, choose S3 
 - Untick all checkboxes in 'Set Permissions'
 - Open the bucket
@@ -327,7 +335,7 @@ https://www.pikist.com/free-photo-xzmyu
 }
 ```
 - Replace example-bucket, in the code, with what's given above the box (Name of the bucket)
-- Go to dashboard, then groups with a click or the link extension of /iam/home?eu-region-west-1%2A%2Fpolicies=#/groups or /iam/home?eu-region-west-1*/groups
+- Go to dashboard through one of the things that can be pinned in the navigation bar, called IAM, then click on groups to create a group
 - Click on Policy and Create a new policy
 - Click on Import managed policy
 - Search for s3 and choose AmazonS3FullAccess
@@ -344,3 +352,34 @@ https://www.pikist.com/free-photo-xzmyu
 - sudo pip3 install django-storages
 - sudo pip3 install boto3 
 - Include 'storages' to INSTALLED-APPS in settings.py
+
+## Resources 
+### Image
+- Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
+- Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
+or 
+https://www.pikist.com/free-photo-xzmyu
+- Smartphone Journey Banner: https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa
+
+- iPhone 11 Brand Examples: https://pixabay.com/de/illustrations/iphone-iphone-11pro-max-apple-4858453/
+- Samsung S10E Brand Example: https://www.flickr.com/photos/nepaltibet2005/46208893305
+- Huawei P30 Pro Bran Example: https://www.flickr.com/photos/janitors/33595154558
+- LG V30 Example: https://commons.wikimedia.org/wiki/File:LG_V30_(cropped).jpg
+- Xiaomi Redmi Note 9 Pro-Max Example: https://pixabay.com/de/illustrations/xiaomi-redmi-redmi-note-9-pro-max-4936657/
+
+- Huawei Mate 20 Pro Photography: https://www.flickr.com/photos/janitors/31641238948
+- iPhone Photography: https://www.wallpaperflare.com/iphone-photography-golden-gate-bridge-photo-backgrounds-earth-wallpaper-aazxq
+- Samsung Galaxy S7 Photography: https://www.pexels.com/de-de/foto/samsung-galaxy-s7-rand-schone-blumen-verschwimmen-verwischen-706962/
+- LG Photography: https://www.pxfuel.com/en/free-photo-qfbiw
+- iPhone photography: https://www.pxfuel.com/en/free-photo-qwtlx
+
+- Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101
+
+- Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
+
+## Acknowledgements 
+I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Samantha, Haley, Luca and Niel for helping me with the problems that I encountered.
+
+
+
+
