@@ -44,8 +44,6 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 
 ## Wireframes
 
-## Features
-
 ## Utilised Technologies
 ### Languages
 - HTML5
@@ -78,6 +76,17 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 - Psycopg2-Binary: to connect Python to the database
 - Pillow: stores images with the usage of django on the website
 - [MiniWebtool](https://miniwebtool.com/django-secret-key-generator/): generates new SECRET_KEY
+
+## Features
+### Existing Features
+- Users can login, registrate and reset their passwords
+- Users can select how many products they want in a shopping-cart and buy them by checking out
+- Users can view their own order histories on the profile page
+- Stripe API was added for payment functionalities to work
+- Users can search for items through keywords that are included in their titles or or descriptions
+
+### Features Left to Implement
+- I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands
 
 ## Process 
 ### Django
@@ -177,7 +186,7 @@ Although it printed out the correct things and I could show the right informatio
     {% endfor %}
 {% endfor %}
 ```
-However, this only increased the number of times a previously purchased item was bought by 1, after every other purchase was made. The idea for using zip came from a Stack Overflow page. Click [here](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates) to visit that page. The Stack Overflow page that inspired me for the for loops and if statement in the template can be found by clicking [here](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466) and (this ) So, I looped through the queryset in the template, instead of views.py and it worked, as I wanted! Here is the final code: 
+However, this only increased the number of times a previously purchased item was bought by 1, after every other purchase was made. The idea for using zip came from a Stack Overflow page. Click [here](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates) to visit that page. The Stack Overflow page that inspired me for the for loops and if statement in the template can be found by clicking [here](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466). So, I looped through the queryset in the template, instead of views.py and it worked, as I wanted! Here is the final code: 
 - views.py
 ```python
 @login_required
@@ -268,8 +277,26 @@ $("input[name = 'username']").keyup(function () {
     - Test worked
 - Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct message
     - Tests worked, the account was logged off and the correct message showed up
+- Tested the responsiveness of the website through a phone and the Chrome DevTools on desktop 
 ### Automated Testing
-
+- Did some automated testing in order to test if all the views in the accounts and checkout apps return the correct statuses to see if they link to the right templates correctly 
+    - All tests worked fine
+#### Tests for the accounts app
+- Tested if the logout view and its success message work correctly through the test_logout function 
+    - That test went rightly too
+- Tested the forms of the accounts app to see, if the registration for took in the email, username, password1 and password2 correctly
+    - Tests passed rightly
+- Tested if empty the right error message would appear, if no value was given for email, username, password1 and password2
+    - Tests Passed correctly, as well
+#### Tests for the checkout app
+- Tested if the BuyProduct model would work, if correct information was given from a logged in user in the test_buy_product function
+    - Tests run correctly
+- Tested if the string function of the BuyProduct model returned the right information, through the test_order_as_string
+    - Tests worked rightly
+- Tested in the test_order_line_item_as_string function, if the string function of the OrderLineItem model returned the correct information, through user login and having order information in the BuyProduct Model
+    - Tests run fine
+- Test in the test_order_history function if the orders would go to the order history on the profile page correctly
+    - Tests run well
 
 ### Installing and Using Coverage
 - sudo pip3 install coverage
@@ -306,9 +333,9 @@ $("input[name = 'username']").keyup(function () {
 - Untick all checkboxes in 'Set Permissions'
 - Open the bucket
 - Go to Properties and then 'Static website hosting'
-- Click on 'Use this bucket to host a website' and input 'index.html' and 'error.html'
+- Click on 'Use this bucket to host a website' and insert 'index.html' and 'error.html'
 - Click on Permissions, then CORS configuration
-- Paste in the following LMS:
+- Write the following code in it:
 ```html
 <CORSConfiguration>
 <CORSRule>
@@ -346,8 +373,8 @@ $("input[name = 'username']").keyup(function () {
 - Go to the created group, go to permissions, search for the policy just created, check it and click on the 'Attach policy' button
 - Click on Users in the side-navigation-bar, then click on Add User and name it with something that is associated with the bucket name and tick programmatic access
 - Choose the created group, skip the keys, as they're not needed and create the user
-- IMPORTANT!!! Make sure to download the .csv, This is the access keys that you will need in your software, It's important to keep them safe. You'll never be able to generate them again. So if you lose them you would have to delete the user and create a new user with new access keys
-- Go back to S3, click on the bucket and test it by trying to upload a file (Eg. an image)
+- It is very important to make sure to download the .csv, this has the access keys needed in the software. It's important to keep them safe. One is never able to generate them again.
+- Go back to S3, click on the bucket and test it by trying to upload a file
 - The image should have a link that can be accessed from anywhere
 
 ## Change the code for S3
@@ -356,11 +383,18 @@ $("input[name = 'username']").keyup(function () {
 - Include 'storages' to INSTALLED-APPS in settings.py
 
 ## Resources 
+[The Ambitious](https://www.ambitious-consulting.de/)
+[Code Institute](https://codeinstitute.net/)
+[StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop)
+[W3Schools](https://www.w3schools.com/python/python_file_handling.asp)
+[Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
+[StackOverflow](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates)
+[StackOverflow](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466)
+[Django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
+[jQuery API Documentation](https://api.jquery.com/val/)
 ### Image
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
 - Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
-or 
-https://www.pikist.com/free-photo-xzmyu
 - Smartphone Journey Banner: https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa
 
 - iPhone 11 Brand Examples: https://pixabay.com/de/illustrations/iphone-iphone-11pro-max-apple-4858453/

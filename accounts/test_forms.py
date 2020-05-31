@@ -14,6 +14,3 @@ class TestForms(TestCase):
         self.assertEqual(form.errors['username'], [u'This field is required.'])
         self.assertEqual(form.errors['password1'], [u'This field is required.'])
         self.assertEqual(form.errors['password2'], [u'This field is required.'])
-
-        # self.assertEqual['username'], [u'This field is required.'])
-        # , ['password1'], [u'This field is required.'], ['password2'], [u'This field is required.'])

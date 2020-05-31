@@ -28,8 +28,6 @@ class TestCheckoutModels(TestCase):
         self.assertEqual("1-{}-Full Name".format(date), str(order))
     
     def test_order_line_item_as_string(self):
-        # theImage = SimpleUploadedFile(name='test_image.jpg', content=open('{{MEDIA_URL}}/media/images/', 'rb').read(), 
-        #                                 content_type='image/jpeg')
         test_user = User.objects.create_user(username="test", email="test@example.com", password="SecretPassword")      
         self.client.login(username='test', password='SecretPassword') 
         date = timezone.now()
@@ -39,7 +37,6 @@ class TestCheckoutModels(TestCase):
         
 
         product = Product.objects.create(name="Product Name", description="Description of the Product",price=400.00)
-        # image=theImage
         order_line = OrderLineItem.objects.create(order=order, quantity=1, product=product, price=400.00)
         self.assertEqual("1 Product Name @ 400.0 | ", str(order_line))
 
@@ -52,8 +49,3 @@ class TestCheckoutModels(TestCase):
         page = self.client.get("accounts/profile/")
         page.orders = orders    
         self.assertEqual(orders.user_account, test_user)
-            
-
-
-            # self.assertEqual(test_user.errors['password'], ['This field is required.'])
-            # self.assertTrue(test_user.is_valid())
