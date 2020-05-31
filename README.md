@@ -46,21 +46,21 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 
 ## Utilised Technologies
 ### Languages
-- HTML5
-- CSS3
-- JavaScript
-- Python3
+- HTML5: As mark-up language
+- CSS3: For styling
+- JavaScript: To add functionalities and animations in the front end
+- Python3: To add functionalities through the back-end
 
 ### Frameworks
-- Django 1.11.24
-- Bootstrap 4
+- Django 1.11.24: Framework based on Python
+- Bootstrap 4: For responsive web designing 
 
 ### Database
-- PostgresSql: from Heroku
-- SQLite3: from Django
+- PostgresSql: Database from Heroku
+- SQLite3: Database from Django
 
 ### API
-- Stripe
+- Stripe: For payment functionalities
 
 ### Validators
 - [PEP8 Validator](http://pep8online.com/)
@@ -89,8 +89,9 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 - Stripe API was added for payment functionalities to work
 - Users can search for items through keywords that are included in their titles or or descriptions
 
-### Features Left to Implement
+### Features Left to Implement and Unsolved Bugs
 - I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands
+- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA)
 
 ## Process 
 ### Django
@@ -277,8 +278,6 @@ $("input[name = 'username']").keyup(function () {
     - Tests worked
 - Checked if the correct number showed up next to the 'Go to Cart' button in the navigation bar, if there were items in the cart
     - Test worked
-- Checked if I could reset my account's password on the password reset page
-    - Test worked
 - Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct message
     - Tests worked, the account was logged off and the correct message showed up
 - Tested the responsiveness of the website through a phone and the Chrome DevTools on desktop 
@@ -406,7 +405,6 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 ```
 
 ## Resources 
-- [The Ambitious](https://www.ambitious-consulting.de/)
 - [Code Institute](https://codeinstitute.net/)
 - [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop)
 - [W3Schools](https://www.w3schools.com/python/python_file_handling.asp)
@@ -419,6 +417,11 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 - [JavaScript Validator](https://jshint.com/)
 - [CSS Validator](http://csslint.net/)
 - [HTML Validator](https://www.freeformatter.com/html-validator.html)
+
+### Resources that helped me for testing 
+- [StackOverflow](https://stackoverflow.com/questions/16143149/django-testing-check-messages-for-a-view-that-redirects/42252248)
+- [StackOverflow](https://stackoverflow.com/questions/21215035/django-test-always-returning-301)
+- [StackOverflow](https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages)
 
 ### Image
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
