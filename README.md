@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Rian1010/Milestone4.svg?branch=master)](https://travis-ci.org/Rian1010/Milestone4)
 
 # Phone-Shop
-This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django. 
+This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django and VSCode was used as code editor. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
 
 ## Purpose of This Project
 This project is an e-commerce website to sell trending mobile phones from all over the world. Users can easily search for their desired brands that vary at different prices and can choose how many they want to put into a shopping-cart to purchase. 
@@ -63,6 +63,10 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 - Stripe
 
 ### Validators
+- [PEP8 Validator](http://pep8online.com/)
+- [JavaScript Validator](https://jshint.com/)
+- [CSS Validator](http://csslint.net/)
+- [HTML Validator](https://www.freeformatter.com/html-validator.html)
 
 ### Other Tools
 - jQuery
@@ -306,7 +310,7 @@ $("input[name = 'username']").keyup(function () {
 - coverage html
 - Display the HTML page to see the parts of an app that needs to be tested
 
-## Deployment 
+## Deployment and Publishing 
 ### Deployment to Github
 - git add .
 - git status
@@ -382,16 +386,40 @@ $("input[name = 'username']").keyup(function () {
 - sudo pip3 install boto3 
 - Include 'storages' to INSTALLED-APPS in settings.py
 
+- For AWS to save the static and media folders, the following content needs to be added to the custom_storages.py file:
+```python
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+And this code below must be added to the settings.py file for it to work:
+```python
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+```
+
 ## Resources 
-[The Ambitious](https://www.ambitious-consulting.de/)
-[Code Institute](https://codeinstitute.net/)
-[StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop)
-[W3Schools](https://www.w3schools.com/python/python_file_handling.asp)
-[Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
-[StackOverflow](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates)
-[StackOverflow](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466)
-[Django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
-[jQuery API Documentation](https://api.jquery.com/val/)
+- [The Ambitious](https://www.ambitious-consulting.de/)
+- [Code Institute](https://codeinstitute.net/)
+- [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop)
+- [W3Schools](https://www.w3schools.com/python/python_file_handling.asp)
+- [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
+- [StackOverflow](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates)
+- [StackOverflow](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466)
+- [Django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
+- [jQuery API Documentation](https://api.jquery.com/val/)
+- [PEP8 Validator](http://pep8online.com/)
+- [JavaScript Validator](https://jshint.com/)
+- [CSS Validator](http://csslint.net/)
+- [HTML Validator](https://www.freeformatter.com/html-validator.html)
+
 ### Image
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
 - Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
