@@ -23,11 +23,12 @@ def checkout(request):
             if order_form.is_valid() and payment_form.is_valid():
                 order = order_form.save(commit=False)
                 order.date = timezone.now()
-                order.save()
+                
                 if request.user.is_authenticated:
                     order.user_account = request.user
                     cart = request.session.get('shopping_cart', {})    
                     total=0
+                    order.save()
                     for id, quantity in cart.items():
                         product=get_object_or_404(Product, pk=id)
                         total += quantity * product.price
@@ -55,6 +56,7 @@ def checkout(request):
                         return redirect(reverse('index'))
                     else:
                         messages.error(request, "Unable to take payment")
+                
             else:
                 messages.error(request, "We were unable to take a payment with that card")
 
