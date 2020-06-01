@@ -81,10 +81,6 @@ def user_profile(request, pk=None):
 
     if request.user.is_authenticated:
         orders = BuyProduct.objects.filter(user_account=request.user)
-        # total_price = []
-        for order in orders:
-            for lineitem in order.lineitems.all():
-                print(lineitem.order.user_account)
     else:
         user = request.user
     
