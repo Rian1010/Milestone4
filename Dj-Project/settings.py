@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'accounts',
     'phoneShop',
     'cart',
-    'home',
     'checkout',
     'storages'
 ]
