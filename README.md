@@ -21,8 +21,6 @@ These are the following sections of te website:
 
 - Logout: Allows a user to sign out of the website
 
--Notes: Reset Password, second home page section
-
 ## UX
 #### User Stories
 - As a user, I would like to know what kind of phones this website sells
@@ -43,6 +41,16 @@ The overall design was inspired from what I was taught about web designing at Co
 The font that I used was the default sans-serif font-family, as I found it fitting to the website and theme already.
 
 ## Wireframes
+- [Home Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/djang-homepage-wireframe.jpeg)
+- [Shop Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/djang-shop-wireframe.jpeg)
+- [Cart Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/django-cart-wireframe.jpeg)
+- [Checkout Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/django-checkout-wireframe.jpeg)
+- [Login Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/django-login-wireframe.jpeg)
+- [Registration Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/django-registration-wireframe.jpeg)
+- [Profile Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/django-profile-wireframe.jpeg)
+- [Reset Password Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/django-reset-password-wireframe.jpeg)
+
+Some of the ideas that are shown in the wireframes have been changed throughout the process of the website for better design and logic.
 
 ## Utilised Technologies
 ### Languages
