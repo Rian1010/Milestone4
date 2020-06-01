@@ -84,11 +84,12 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 - Gunicorn: runs Python applications
 - Travis CI: continiuous integration
 - AWS S3 Bucket: cloud storage
-- Boto3: ror the usage of Amazon S3
+- Boto3: for the usage of Amazon S3
 - VSCode: code editor
 - Psycopg2-Binary: to connect Python to the database
 - Pillow: stores images with the usage of django on the website
 - [MiniWebtool](https://miniwebtool.com/django-secret-key-generator/): generates new SECRET_KEY
+- [compressjpeg](https://compressjpeg.com/): for image compression
 
 ## Features
 ### Existing Features
@@ -247,8 +248,8 @@ $("input[name = 'username']").keyup(function () {
 
 ## Testing
 ### Manual Testing
-- Tried to register with wrongly formatted passwords, and also unmatched passwords
-    - Both tests resulted in the correct error messages
+- Tried to register with unmatched passwords
+    - Test resulted in the correct error messages
 - Tried to register without filling in a required field
     - The registrations did not work 
 - Registered and logged in

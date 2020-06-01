@@ -35,6 +35,19 @@
     color: white;
 }
 
+.navbar-content-positioning {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.search-app-positioning {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
 /* Bootstrap Collapsible Navigation Bar */
 .collapse.show {
     display: block;
@@ -64,8 +77,8 @@
     color: rgb(255, 176, 30);
 }
 
-.transparent {
-    background-color: rgba(0, 0, 0, 0);
+.see-through-blue {
+    background-color: rgba(0, 18, 255, 0.8);
     height: 60px;
 }
 
