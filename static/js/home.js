@@ -5,20 +5,14 @@ $(document).ready(function () {
         $(document).scroll(function () {
             scroll_pos = $(this).scrollTop();
             if (scroll_pos < 100) {
-                $(".navbar").addClass("blue").removeClass('see-through-blue').css({
-                    transition: ".5s",
-                });
-                $('.nav-items-background').addClass("blue").removeClass('see-through-blue').css({
+                $(".navbar").addClass("blue").removeClass('see-through-blue-nav').css({
                     transition: ".5s",
                 });
                 $('.nav-link').css({
                     color: "#fff",
                 });
             } else if (scroll_pos >= 100) {
-                $('.navbar').addClass('see-through-blue').removeClass("blue").css({
-                    transition: "1s",
-                });
-                $('.nav-items-background').addClass('see-through-blue').removeClass("blue").css({
+                $('.navbar').addClass('see-through-blue-nav').removeClass("blue").css({
                     transition: "1s",
                 });
                 $('.nav-link').css({
