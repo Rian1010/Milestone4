@@ -440,6 +440,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 - StackOverflow: https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages
 
 ### Image
+- Some of the images listed below are also used as products on the shop page
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
 - Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
 - Smartphone Journey Banner: https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa
@@ -461,6 +462,12 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 - Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
 
 - Favicon: https://commons.wikimedia.org/wiki/File:Mobile-Smartphone-icon.png
+
+##### Other product images
+- Wallpaper Flare: https://www.wallpaperflare.com/phone-samsung-mobile-smartphone-technology-modern-cell-wallpaper-gptpt
+- Wikipedia Commons: https://commons.wikimedia.org/wiki/File:SONY_XPERIA_A_(docomo_SO-04E).jpg
+- Wikipedia: https://de.m.wikipedia.org/wiki/Datei:Nokia_Lumia_1020_front.jpg
+- Wikipedia: https://commons.wikimedia.org/wiki/File:Oppo_R9.png
 
 ## Acknowledgements 
 I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Samantha, Haley, Luca and Niel for helping me with the problems that I encountered.
