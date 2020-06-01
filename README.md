@@ -76,6 +76,7 @@ The font that I used was the default sans-serif font-family, as I found it fitti
 - Gunicorn: runs Python applications
 - Travis CI: continiuous integration
 - AWS S3 Bucket: cloud storage
+- Boto3: ror the usage of Amazon S3
 - VSCode: code editor
 - Psycopg2-Binary: to connect Python to the database
 - Pillow: stores images with the usage of django on the website
