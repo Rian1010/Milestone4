@@ -36,7 +36,7 @@ These are the following sections of te website:
 
 ## Front-End Design
 
-The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](https://www.ambitious-consulting.de/) from Jan Ruthard. The colours that I used were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours.
+The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](https://www.ambitious-consulting.de/) from Jan Ruthard. The colours that I used were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours. Also, I made the navigation bar of the website simple, with not too many links, so that the user is not overwhelmed. My mentor told me that people are used to clicking on the brand name in the navigation bar to go to the home page, so an extra home button was not required.
 
 The font that I used was the default sans-serif font-family, as I found it fitting to the website and theme already.
 
