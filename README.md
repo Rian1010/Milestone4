@@ -1,21 +1,21 @@
 [![Build Status](https://travis-ci.org/Rian1010/Milestone4.svg?branch=master)](https://travis-ci.org/Rian1010/Milestone4)
 
 # Phone-Shop
-This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus was using Django and VSCode was used as code editor. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
+This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus is using Django and VSCode was used as code editor. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
 
 ## Purpose of This Project
 This project is an e-commerce website to sell trending mobile phones from all over the world. Users can easily search for their desired brands that vary at different prices and can choose how many they want to put into a shopping-cart to purchase. 
 
-These are the following sections of te website:
-- Home page: As it is the first page that a user gets to see, it contains examples of product that are being sold, examples of smartphone photography and a section for the call to action of buying a product. 
+These are the following sections of the website:
+- Home page: As it is the first page that a user gets to see, it contains examples of products that are being sold, examples of smartphone photography and a section for the call to action of buying a product. 
 
 - Login/Registration Page: Enables users to sign in or sign up to visit the rest of the web pages, besides the home page.
 
-- Reset Password Page: Allows a user to reset one's own password.
+- Reset Password Page: Is supposed to allow a user to reset one's own password.
 
 - Shop Page: The page that contains all products that the website has to offer. A user can add a product from that page to the cart page.
 
-- Cart Page: A logged in user can see the items that one has added into the cart, how much the total price is and each chosen product's details, before checking out. 
+- Cart Page: A logged in user can see the items that he or she has added into the cart, how much the total price is and each chosen product's details, before checking out. 
 
 - Profile Page: Shows the user account's information and order history.
 
@@ -23,22 +23,23 @@ These are the following sections of te website:
 
 ## UX
 #### User Stories
-- As a user, I would like to know what kind of phones this website sells
-- As a user, I would like to see interesting things that I could do with a product from the website and quick examples of good phone
-- As a user, I would like to be able to simply search for the keywords of or about a product that I am looking for. 
-- As a user, I would like to add the items that I am interested in, to save them there and see what the total price is.
+- As a user, I would like to know what kind of phones this website sells, even before having to register
+- As a user, I would like to see interesting things that I could do with a product from the website and quick examples of good phones
+- As a user, I would like to be able to simply search for the keywords that the name or the description of a product contains 
+- As a user, I would like to add the items that I am interested in, to a shopping-cart to save them there and see what the total price is
 - As a user, I would like to enter the required information for me to purchase a product in a simple way and view the items that I bought with the order information, in an order history
-- As a user, I would like see my account details again, before I forget them, and be able to reset the password, in case I do not remember it anymore
-- As a user, I would like to be able to visit the website from multiple devices, if phone, tablet, laptop
+- As a user, I would like to be able to visit the website from multiple devices, such as phone, tablet or laptop
 #### Admin Stories
 - As an admin, I would like to sign in to the administration panel
 - As an admin, I would not like a user to have the ability to edit, add or remove product details from the shop page
 
 ## Front-End Design
 
-The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](https://www.ambitious-consulting.de/) from Jan Ruthard. The colours that I used were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours. Also, I made the navigation bar of the website simple, with not too many links, so that the user is not overwhelmed. My mentor told me that people are used to clicking on the brand name in the navigation bar to go to the home page, so an extra home button was not required.
+The overall design was inspired from what I was taught about web designing at Code Institute and an internship that I did, before starting this project, at [The Ambitious](https://www.ambitious-consulting.de/) by Jan Ruthard. 
 
-The font that I used was the default sans-serif font-family, as I found it fitting to the website and theme already.
+The colours that I used on the website were white, orange and blue. I wanted to use bright colours that match well together, such as white, light blue and light orange, so that it would give off a positive look on first glance, but still a sense of importance by usind sharp edges on the pictures and boxes and not choosing too light colours. Also, I made the navigation bar of the website simple, without too many links, so that the user is not overwhelmed. My mentor told me that people are used to clicking on the brand name in the navigation bar to go to the home page, so an extra home button was not required.
+
+The font that I used was the default sans-serif font-family, as I found it to be fitting to the website and theme already.
 
 ## Wireframes
 - [Home Page](https://github.com/Rian1010/Milestone4/blob/master/wireframes/djang-homepage-wireframe.jpeg)
@@ -56,7 +57,7 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 ### Languages
 - HTML5: As mark-up language
 - CSS3: For styling
-- JavaScript: To add functionalities and animations in the front end
+- JavaScript: To add functionalities and animations in the front-end
 - Python3: To add functionalities through the back-end
 
 ### Frameworks
@@ -77,12 +78,12 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 - [HTML Validator](https://www.freeformatter.com/html-validator.html)
 
 ### Other Tools
-- jQuery
+- jQuery: JavaScript library
 - Github: hosts the website
 - Git: version control
 - Heroku: app Deployment
 - Gunicorn: runs Python applications
-- Travis CI: continiuous integration
+- Travis CI: continuous integration
 - AWS S3 Bucket: cloud storage
 - Boto3: for the usage of Amazon S3
 - VSCode: code editor
@@ -99,15 +100,15 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 - Users can select how many products they want in a shopping-cart and buy them by checking out
 - Users can view their own order histories on the profile page
 - Stripe API was added for payment functionalities to work
-- Users can search for items through keywords that are included in their titles or or descriptions
+- Users can search for items through keywords that are included in the items' titles or descriptions
 
 ### Features Left to Implement and Unsolved Bugs
 - I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands
-- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA) and save it as an environment variable in env.py for EMAIL_PASSWORD from settings.py, but it did not work.
+- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA) and saved it as an environment variable in env.py for EMAIL_PASSWORD, which is in settings.py, but it did not work.
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them for user authorisation and authentication in the accounts app, a lot in the search app, phoneShope app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The things codes that I learned from the course are indicated with comments in their files.
+Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, phoneShope app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
 
 I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make most things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
 

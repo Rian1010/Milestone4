@@ -7,8 +7,9 @@ from django.conf import settings
 from django.utils import timezone
 from phoneShop.models import Product
 import stripe
+"""I learned how to write the code bellow through Code Institute and it is the only way I know how to do it. 
+Source: https://codeinstitute.net/"""
 
-# Create your views here.
 stripe.api_key=settings.STRIPE_SECRET
 
 

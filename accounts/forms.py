@@ -2,6 +2,10 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+"""
+I learned how to write the code bellow through Code Institute and it is the only way I know doing it. 
+Source: https://codeinstitute.net/
+"""
 
 
 class UserLoginForm(forms.Form):

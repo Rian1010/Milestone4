@@ -14,41 +14,45 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-content-positioning">
-        <a class="navbar-brand orange" href="{% url 'index' %}">Online Phone Shop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-items-background" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'profile' pk=user.pk %}"><i class="fa fa-user"></i> Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'products' %}"><i class="fa fa-shopping-basket"></i> Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                {% endif %}
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a  class="nav-link" href="{% url 'cart_views' %}">
-                        {% if user.is_authenticated %}
-                        <i class="fa fa-shopping-cart"></i> Go to Cart
-                        {% endif %}
-                        {% if product_count > 0 %}
-                        <label class="badge badge-warning">{{ product_count }}</label>
-                        {% endif %}
-                    </a>
-                </li>
-            </ul>
-            <form action="{% url 'search' %}" method="GET" class="form-inline my-2 my-lg-0 search-app-positioning">
-                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-content-positioning">
+            <a class="navbar-brand orange" href="{% url 'index' %}">Online Phone Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-items-background" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' pk=user.pk %}"><i class="fa fa-user"></i> Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products' %}"><i class="fa fa-shopping-basket"></i> Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a  class="nav-link" href="{% url 'cart_views' %}">
+                            {% if user.is_authenticated %}
+                            <i class="fa fa-shopping-cart"></i> Go to Cart
+                            {% endif %}
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
+                    </li>
+                </ul>
+                <form action="{% url 'search' %}" method="GET" class="form-inline my-2 my-lg-0 search-app-positioning">
+                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <article>
+    <!-- Supposed to displays messages if needed -->
     {% if messages %}
     <div class="message-styling">
         {% for message in messages %}
@@ -56,26 +60,29 @@
         {% endfor %}
     </div>
     {% endif %}
-
-    {% block content %}{% endblock %}
+    <!-- Displays the main content of the web pages -->
     
+        {% block content %}{% endblock %}
+    </article>
+    
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h2>Contacts</h2>
                     <ul>
-                        <li><a  href="tel: 12 3456 7890" class="footer-links">Phone number: 12 4567 7890</a></li>
-                        <li><a class="footer-links" href="mailto: rtegally1098@gmail.com">rtegally1098@gmail.com</a></li>
+                        <li><a  href="tel: 12 3456 7890" class="footer-links"><i class="fa fa-phone"></i> Phone number: 12 4567 7890</a></li>
+                        <li><a class="footer-links" href="mailto: rtegally1098@gmail.com"><i class="fa fa-envelope-square"></i> rtegally1098@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <h2>Social Media</h2>
                     <ul>
-                        <li><a class="footer-links"  href="http://www.instagram.com" target="_blank">Instagram</a></li>
-                        <li><a class="footer-links" href="http://www.facebook.com" target="_blank">Facebook</a></li>
-                        <li><a class="footer-links" href="http://www.youtube.com" target="_blank">Youtube</a></li>
-                        <li><a class="footer-links" href="http://www.twitter.com" target="_blank">Twitter</a></li>
+                        <li><a class="footer-links"  href="http://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+                        <li><a class="footer-links" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+                        <li><a class="footer-links" href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i> Youtube</a></li>
+                        <li><a class="footer-links" href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,12 @@
 from django.test import TestCase
 from .forms import UserRegistrationForm, UserLoginForm
+"""I learned how to use this code bellow through Code Institute. Source: https://codeinstitute.net/"""
+
 
 # Create your tests here.
 class TestForms(TestCase):
     def test_register_information(self):
+        """Tests if a user is able to registrate"""
         form = UserRegistrationForm(
             {
                 'email': 'testing@gmail.com', 
@@ -14,6 +17,7 @@ class TestForms(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_correct_result_for_no_value(self):
+        """Tests if the correct registration errors occur through empty input"""
         form = UserRegistrationForm(
             {
                 'email': '', 

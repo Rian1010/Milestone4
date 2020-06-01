@@ -1,4 +1,6 @@
 from django.db import models
+"""I learned how to write the code bellow through Code Institute and it is the only way I know how to do it. 
+Source: https://codeinstitute.net/"""
 
 
 # Create your models here.

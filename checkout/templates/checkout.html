@@ -19,13 +19,13 @@
     <div class="container text-center">
         <h1>Checkout</h1>
     </div>
+    <!-- Shows the item/s that are being bought -->
     <div class="container">
         {% for item in cart_items %}
         <div class="cart-item-style-around">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                    <div class="item"
-                        style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)), url('{{ MEDIA_URL }}{{ item.product.image }}')">
+                    <div class="item" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)), url('{{ MEDIA_URL }}{{ item.product.image }}')">
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
                     <form class="form-inline" method="post" action="{% url 'cart_adjustments' item.id %}">
                         {% csrf_token %}
                         <label class="sr-only">Quantity</label>
-                        <input name="quantity" type="number" min="0" max="999" class="form-control">
+                        <input name="quantity" type="number" min="0" max="999" class="form-control" required>
                         <button type="submit" class="btn btn-primary">
                             Amend
                         </button>
@@ -47,6 +47,7 @@
         </div>
         {% endfor %}
     </div>
+    <!-- Form to enter personal information that is required to purchase the product/s -->
     <div class="container">
         <form role='form' id="payment-form" action="{% url 'checkout' %}" method="post">
             <legend>Payment Details</legend>

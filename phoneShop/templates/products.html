@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="section-margin phone-shop-banner">
+<section class="section-margin phone-shop-banner" title="Background picture of a woman holding a smartphone">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -10,6 +10,7 @@
         </div>
     </div>
 </section>
+<!-- Displays the products that the website has to offer -->
 <section class="section-padding-bottom">
     <div class="container">
         <div class="row">
@@ -17,7 +18,7 @@
             <div class="col-sm-12 col-md-4">
                 <div class="product-container">
                     <div class="product"
-                        style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)), url('{{ MEDIA_URL }}{{ product.image }}')">
+                        style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)), url('{{ MEDIA_URL }}{{ product.image }}')" title="Background picture of a phone that is in the online shop">
                         <div class="product-info-styling">
                             <div class="row">
                                 <div class="col-7">

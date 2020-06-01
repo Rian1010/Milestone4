@@ -2,9 +2,10 @@ from django.db import models
 from phoneShop.models import Product
 from django.contrib.auth.models import User
 from django import forms
+"""I learned how to write most of the code bellow through Code Institute and it is the only way I know how to do it. 
+Source: https://codeinstitute.net/"""
 
 
-# Create your models here.
 class BuyProduct(models.Model):
     user_account = models.ForeignKey(User, null=False, related_name='user_account', default=1)
     full_name = models.CharField(max_length=50, blank=False)

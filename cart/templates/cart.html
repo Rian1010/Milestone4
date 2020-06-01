@@ -8,6 +8,7 @@
     <div class="container text-center">
         <h1>Shopping Cart</h1>
     </div>
+    <!-- Displays the items in the shopping-cart of a user -->
     <div class="container">
         {% if total == 0 %}
         <div class="row">
@@ -34,7 +35,7 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <label class="sr-only">Quantity</label>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                            <input name="quantity" type="number" min="0" max="999" class="form-control" required>
                         </div>
                         <div class="form-group">
                         <button type="submit" class="btn btn-primary total-value-position">
@@ -48,6 +49,7 @@
         {% endfor %}
         {% endif %}
     </div>
+    <!-- Shows the total price of each product -->
     <div class="container">
         <div class="row">
             <div class="col-12 total-value-position">

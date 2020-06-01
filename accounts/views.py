@@ -7,6 +7,11 @@ from phoneShop.models import Product
 from django.utils import timezone
 from checkout.forms import OrderForm, MakePayment
 from checkout.models import OrderLineItem, BuyProduct
+"""
+I learned how to write most of the code of the login, logout, index and register functions 
+through Code Institute and it is the only way I know doing it. Source: https://codeinstitute.net/
+"""
+
 
 def index(request):
     """Return the index file"""
@@ -66,9 +71,11 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {"registration_form": registration_form})
 
+"""I learned how to get a user's account information from Code institute (https://codeinstitute.net/), but I got the order history in the
+user_profile function through days of research and tutors and Slack members from Code Institute helping me."""
 @login_required
 def user_profile(request, pk=None):
-    """The user's profile page"""
+    """The user's profile page should return it with the account's order history"""
     user = User.objects.get(username=request.user.username, email=request.user.email, pk=pk)
 
     if request.user.is_authenticated:
