@@ -89,7 +89,9 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 - Psycopg2-Binary: to connect Python to the database
 - Pillow: stores images with the usage of django on the website
 - [MiniWebtool](https://miniwebtool.com/django-secret-key-generator/): generates new SECRET_KEY
-- [compressjpeg](https://compressjpeg.com/): for image compression
+- [compressjpeg](https://compressjpeg.com/): for jpeg image compression
+- [compresspng](https://compresspng.com/): for png image compression
+- [Favicon converter](https://favicon.io/favicon-converter/)
 
 ## Features
 ### Existing Features
@@ -101,7 +103,7 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 
 ### Features Left to Implement and Unsolved Bugs
 - I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands
-- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA)
+- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA) and save it as an environment variable in env.py for EMAIL_PASSWORD from settings.py, but it did not work.
 
 ## Process 
 ### Django
@@ -415,23 +417,27 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 ```
 
 ## Resources 
-- [Code Institute](https://codeinstitute.net/)
-- [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop)
-- [W3Schools](https://www.w3schools.com/python/python_file_handling.asp)
-- [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
-- [StackOverflow](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates)
-- [StackOverflow](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466)
-- [Django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
-- [jQuery API Documentation](https://api.jquery.com/val/)
-- [PEP8 Validator](http://pep8online.com/)
-- [JavaScript Validator](https://jshint.com/)
-- [CSS Validator](http://csslint.net/)
-- [HTML Validator](https://www.freeformatter.com/html-validator.html)
+- Code Institute: https://codeinstitute.net/
+- StackOverflow: https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop
+- W3Schools: https://www.w3schools.com/python/python_file_handling.asp
+- Reading and Writing files in Pure Python Documentation: https://python4mpia.github.io/pure_python/files.html
+- StackOverflow: https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates
+- StackOverflow: https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466
+- Django documentation: https://docs.djangoproject.com/en/3.0/ref/models/querysets/
+- jQuery API Documentation: https://api.jquery.com/val/
+- PEP8 Validator: http://pep8online.com/
+- JavaScript Validator: https://jshint.com/
+- CSS Validator: http://csslint.net/
+- HTML Validator: https://www.freeformatter.com/html-validator.html
+- Favicon Converter: https://favicon.io/favicon-converter/
+- MiniWebtool: https://miniwebtool.com/django-secret-key-generator/
+- compressjpeg: https://compressjpeg.com/
+- compresspng: https://compresspng.com/
 
 ### Resources that helped me for testing 
-- [StackOverflow](https://stackoverflow.com/questions/16143149/django-testing-check-messages-for-a-view-that-redirects/42252248)
-- [StackOverflow](https://stackoverflow.com/questions/21215035/django-test-always-returning-301)
-- [StackOverflow](https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages)
+- StackOverflow: https://stackoverflow.com/questions/16143149/django-testing-check-messages-for-a-view-that-redirects/42252248
+- StackOverflow: https://stackoverflow.com/questions/21215035/django-test-always-returning-301
+- StackOverflow: https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages
 
 ### Image
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
@@ -453,6 +459,8 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 - Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101
 
 - Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
+
+- Favicon: https://commons.wikimedia.org/wiki/File:Mobile-Smartphone-icon.png
 
 ## Acknowledgements 
 I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Samantha, Haley, Luca and Niel for helping me with the problems that I encountered.
