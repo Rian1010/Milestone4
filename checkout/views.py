@@ -24,36 +24,37 @@ def checkout(request):
                 order = order_form.save(commit=False)
                 order.date = timezone.now()
                 order.save()
-
-                cart = request.session.get('shopping_cart', {})    
-                total=0
-                for id, quantity in cart.items():
-                    product=get_object_or_404(Product, pk=id)
-                    total += quantity * product.price
-                    order_line_item=OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=quantity,
-                        total=total,
-                        price=product.price,
-                    )
-                    order_line_item.save()
-                try:
-                    # Stripe takes everything in cents, therefore total * 100
-                    customer = stripe.Charge.create(
-                        amount=int(total * 100),
-                        currency="EUR",
-                        description=request.user.email,
-                        card=payment_form.cleaned_data['stripe_id'],
-                    )
-                except stripe.error.CardError:
-                    messages.error(request, "Your card was declined")
-                if customer.paid:
-                    messages.error(request, "You have successfully paid")
-                    request.session['shopping_cart']={}
-                    return redirect(reverse('index'))
-                else:
-                    messages.error(request, "Unable to take payment")
+                if request.user.is_authenticated:
+                    order.user_account = request.user
+                    cart = request.session.get('shopping_cart', {})    
+                    total=0
+                    for id, quantity in cart.items():
+                        product=get_object_or_404(Product, pk=id)
+                        total += quantity * product.price
+                        order_line_item=OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=quantity,
+                            total=total,
+                            price=product.price,
+                        )
+                        order_line_item.save()
+                    try:
+                        # Stripe takes everything in cents, therefore total * 100
+                        customer = stripe.Charge.create(
+                            amount=int(total * 100),
+                            currency="EUR",
+                            description=request.user.email,
+                            card=payment_form.cleaned_data['stripe_id'],
+                        )
+                    except stripe.error.CardError:
+                        messages.error(request, "Your card was declined")
+                    if customer.paid:
+                        messages.error(request, "You have successfully paid")
+                        request.session['shopping_cart']={}
+                        return redirect(reverse('index'))
+                    else:
+                        messages.error(request, "Unable to take payment")
             else:
                 messages.error(request, "We were unable to take a payment with that card")
 

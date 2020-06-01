@@ -96,7 +96,7 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 
 ## Features
 ### Existing Features
-- Users can login, registrate and reset their passwords
+- Users can login and registrate 
 - Users can select how many products they want in a shopping-cart and buy them by checking out
 - Users can view their own order histories on the profile page
 - Stripe API was added for payment functionalities to work
@@ -104,13 +104,13 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 
 ### Features Left to Implement and Unsolved Bugs
 - I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands
-- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA) and saved it as an environment variable in env.py for EMAIL_PASSWORD, which is in settings.py, but it did not work.
+- I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA) and saved it as an environment variable in env.py for EMAIL_PASSWORD, which is in settings.py, but it did not work locally.
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, phoneShope app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
+Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, phoneShop app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
 
-I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make most things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
+I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
 
 At first, I asked a tutor from Code Institute lots of questions to understand things to tackle this challenge better. So, I tried the following:
 
@@ -122,7 +122,7 @@ return render(request, "profile.html", {"test": test, "profile": user})
 
 In the code above, I wanted to get each primary key of the OrderLineItem and print some of the required information. This then worked, but I could not grab everything that I needed from that model. 
 
-So, after talking to tutors from Code Institute again, explaining more of what I was trying to do, my next try was the following:
+So, after talking to tutors from Code Institute again, explaining more of what I was trying to do. My next try was the following:
 
 ```python
 if request.user.is_authenticated:
@@ -140,7 +140,7 @@ if request.user.is_authenticated:
 
 At that point, I thought I had it, because this print statement was printing out the querysets, and the orders were working fine in the templates, but the problem was that the history variable was only available inside of the for loop, so it did not show up in the templates. I tested it by printing the same print statement outside of the for loop and it was empty. 
 
-Therefore, I needed to append `history = order.lineitems.all()` and I failed trying the following things:
+Therefore, I needed to append `history = order.lineitems.all()` and I failed trying the following code:
 ```python
     history = []
     for order in orders:
@@ -159,7 +159,7 @@ This code returned querysets again.
             
         print(history)
 ```
-I learned this way, above from [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop), [W3Schools](https://www.w3schools.com/python/python_file_handling.asp) and [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
+I learned about this code, above from [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop), [W3Schools](https://www.w3schools.com/python/python_file_handling.asp) and [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
 
 Someone from the course, on Slack, who seems to often help others told me to try the following for loop, so I googled it, trying to understand it and this is what I did:
 
@@ -231,7 +231,7 @@ def user_profile(request, pk=None):
 {% endfor %}
 ```
 
-In the search app, another challenge was to allow users to search for products with keywords that target both, the name and description of the product, instead of just its name. At first I tried using two variable to filter them separately, which did not work correctly. Later, I found out about Q objects and used the [django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/), as assistance to get it to work in the views.py file of the search app. Here is the code that I ended up writing, which works:
+In the search app, another challenge was to allow users to search for products with keywords that target both, the name and description of the product, instead of just its name. At first I tried using two variables to filter them separately, which did not work correctly. Later, I found out about Q objects and used the [django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/), as assistance to get it to work in the views.py file of the search app. Here is the code that I ended up writing, which works:
 
 ```python
 def search_function(request):
@@ -240,7 +240,7 @@ def search_function(request):
 ```
 
 ### JavaScript
-The JavaScript code was written by myself, except for the code that takes the value that is give by the user through input to display the username that one enters above the input fields. I learned how to write that code from the [jQuery API Documentation](https://api.jquery.com/val/). Here is the code that I am talking about:
+The JavaScript code was written by myself, except for the code that takes the value that is given by the user through input to display the username that one enters above the input fields. I learned how to write that code from the [jQuery API Documentation](https://api.jquery.com/val/). Here is the code that I am talking about:
 
 ```javascript
 $("input[name = 'username']").keyup(function () {
@@ -254,25 +254,25 @@ $("input[name = 'username']").keyup(function () {
 - Tried to register with unmatched passwords
     - Test resulted in the correct error messages
 - Tried to register without filling in a required field
-    - The registrations did not work 
+    - The registration did not work, so the test went right
 - Registered and logged in
     - Both tests worked
-- Tried to have access to another web page besides the home by clicking on the available buttons before being logged in
+- Tried to have access to another web page, besides the home page by clicking on the available buttons before being logged in
     - Each page lead me to the login page
 - Logged in and scrolled through each page to make sure that the JavaScript on the navigation bars work correctly
     - It worked correctly on scroll and the item links work rightly on hover, both on ever page
 - Tried typing something into the username input boxes of the login and registration forms to check if the JavaScript code correctly picked up the values to display the letters above the input fields
     - Test worked
-- Went to the second section of the home page, where phone brand examples are shown, and hovered over the name of the brand to test if JavaScript would display the picture the of each phone's name rightly according to which name I hover on 
+- Went to the second section of the home page, where phone brand examples are shown, and hovered over the name of the brand to test if JavaScript would display the picture of each phone rightly according to which name I hover on 
     - Tests worked
 - Checked if the design on each page looks fine responsively and if it is easy to use
     - Everything is fine now
 - Went to the shop page and tried adding items to the cart buy clicking on the arrows that appear in the input field and tried changing the number manually too
     - Tests worked
 - Clicked on the add button without inserting a number into the field of an item in the shop page
-    - Showed correctly that an input in required
+    - Message returned correctly, showing that an input is required
 - Clicked on the add button after inserting a number into the input field
-    - Correctly lead me to the cart page with the right information of the added item 
+    - Correctly lead me to the cart page with the right information of the added item
 - Added more items to the cart field
     - Each item was displayed correctly with the right total price at the bottom 
 - Clicked on the checkout button to pay
@@ -294,13 +294,14 @@ $("input[name = 'username']").keyup(function () {
 - Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct message
     - Tests worked, the account was logged off and the correct message showed up
 - Tested the responsiveness of the website through a phone and the Chrome DevTools on desktop 
+    - Tests worked well on all device-sizes
 ### Automated Testing
 - Did some automated testing in order to test if all the views in the accounts and checkout apps return the correct statuses to see if they link to the right templates correctly 
     - All tests worked fine
 #### Tests for the accounts app
 - Tested if the logout view and its success message work correctly through the test_logout function 
     - That test went rightly too
-- Tested the forms of the accounts app to see, if the registration for took in the email, username, password1 and password2 correctly
+- Tested the forms of the accounts app to see, if the email, username, password1 and password2 were validated correctly in the registration
     - Tests passed rightly
 - Tested if empty the right error message would appear, if no value was given for email, username, password1 and password2
     - Tests Passed correctly, as well

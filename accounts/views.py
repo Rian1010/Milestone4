@@ -81,16 +81,14 @@ def user_profile(request, pk=None):
 
     if request.user.is_authenticated:
         orders = BuyProduct.objects.filter(user_account=request.user)
-
-        total_price = []
+        # total_price = []
         for order in orders:
             for lineitem in order.lineitems.all():
-                total = lineitem.price * lineitem.quantity
-                total_price.append(total)
+                print(lineitem.order.user_account)
     else:
         user = request.user
     
-    context = {"profile": user, "orders": orders, "total_price": total_price}
+    context = {"profile": user, "orders": orders}
 
     return render(request, 'profile.html', context)
 

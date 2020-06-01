@@ -7,7 +7,7 @@ Source: https://codeinstitute.net/"""
 
 
 class BuyProduct(models.Model):
-    user_account = models.ForeignKey(User, null=False, related_name='user_account', default=1)
+    user_account = models.ForeignKey('auth.User', null=True, related_name='user_account')
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     country = models.CharField(max_length=40, blank=False)
