@@ -19,7 +19,6 @@ class TestAccountViews(TestCase):
         reverse_page = self.client.post(reverse('index'))
         self.assertEqual(reverse_page.status_code, 200)
 
-
     def test_registration_page(self):
         page = self.client.get("/accounts/register/")
         self.assertEqual(page.status_code, 200)

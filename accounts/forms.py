@@ -13,14 +13,12 @@ class UserLoginForm(forms.Form):
 
 class UserRegistrationForm(UserCreationForm):
     """Form used to register a new user"""
- 
     password1 = forms.CharField(
         label="Password", 
         widget=forms.PasswordInput)
     password2 = forms.CharField(
         label="Password Confirmation",
         widget=forms.PasswordInput)
-    
     class Meta:
         model = User
         fields = ['email', 'username', 'password1', 'password2']
@@ -43,5 +41,4 @@ class UserRegistrationForm(UserCreationForm):
         
         if password1 != password2:
             raise ValidationError("Passwords must match")
-        
         return password2

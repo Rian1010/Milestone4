@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^$', index, name="index"),
     url(r'^shop/', include(url_products)),
     url(r'^accounts/', include(accounts_urls)),
-    url(r'^cart/', include(url_cart)), 
+    url(r'^cart/', include(url_cart)),
     url(r'^checkout', include(url_checkout)),
     url(r'^search/', include(search_url)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),

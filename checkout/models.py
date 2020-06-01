@@ -3,6 +3,7 @@ from phoneShop.models import Product
 from django.contrib.auth.models import User
 from django import forms
 
+
 # Create your models here.
 class BuyProduct(models.Model):
     user_account = models.ForeignKey(User, null=False, related_name='user_account', default=1)
@@ -19,6 +20,7 @@ class BuyProduct(models.Model):
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
     
+
 class OrderLineItem(models.Model):
     order=models.ForeignKey(BuyProduct, null=False, related_name='lineitems')
     product=models.ForeignKey(Product, null=False, related_name='lineproduct')
@@ -28,3 +30,4 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return "{0} {1} @ {2} | {3}".format(self.quantity, self.product.name, self.price, self.product.image)
+        
