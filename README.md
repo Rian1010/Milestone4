@@ -487,59 +487,59 @@ MEDIA_URL = 'https://%s/%s/'%(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 ## Resources 
 - Note: Out of many other sources that I encountered for tries that failed, these are the sources that ended up assisting me for correct solutions that I was looking for
-- Code Institute: https://codeinstitute.net/
-- Slack: https://slack.com/intl/en-de/?eu_nc=1
-- StackOverflow: https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop
-- W3Schools: https://www.w3schools.com/python/python_file_handling.asp
-- Reading and Writing files in Pure Python Documentation: https://python4mpia.github.io/pure_python/files.html
-- StackOverflow: https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates
-- StackOverflow: https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466
-- Django documentation: https://docs.djangoproject.com/en/3.0/ref/models/querysets/
-- jQuery API Documentation: https://api.jquery.com/val/
-- PEP8 Validator: http://pep8online.com/
-- JavaScript Validator: https://jshint.com/
-- CSS Validator: http://csslint.net/
-- HTML Validator: https://www.freeformatter.com/html-validator.html
-- Favicon Converter: https://favicon.io/favicon-converter/
-- MiniWebtool: https://miniwebtool.com/django-secret-key-generator/
-- compressjpeg: https://compressjpeg.com/
-- compresspng: https://compresspng.com/
-- Google Security page: https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA
+- [Code Institute](https://codeinstitute.net/)
+- [Slack](https://slack.com/intl/en-de/?eu_nc=1)
+- [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop)
+- [W3Schools](https://www.w3schools.com/python/python_file_handling.asp)
+- [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
+- [StackOverflow](https://stackoverflow.com/questions/2415865/iterating-through-two-lists-in-django-templates)
+- [StackOverflow](https://stackoverflow.com/questions/14841165/is-there-a-way-to-loop-over-two-lists-simultaneously-in-django/14841466)
+- [Django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
+- [jQuery API Documentation](https://api.jquery.com/val/)
+- [PEP8 Validator](http://pep8online.com/)
+- [JavaScript Validator](https://jshint.com/)
+- [CSS Validator](http://csslint.net/)
+- [HTML Validator](https://www.freeformatter.com/html-validator.html)
+- [Favicon Converter](https://favicon.io/favicon-converter/)
+- [MiniWebtool](https://miniwebtool.com/django-secret-key-generator/)
+- [compressjpeg](https://compressjpeg.com/)
+- [compresspng](https://compresspng.com/)
+- [Google Security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA)
 
 ### Resources that helped me for testing 
-- StackOverflow: https://stackoverflow.com/questions/16143149/django-testing-check-messages-for-a-view-that-redirects/42252248
-- StackOverflow: https://stackoverflow.com/questions/21215035/django-test-always-returning-301
-- StackOverflow: https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages
+- [StackOverflow](https://stackoverflow.com/questions/16143149/django-testing-check-messages-for-a-view-that-redirects/42252248)
+- [StackOverflow](https://stackoverflow.com/questions/21215035/django-test-always-returning-301)
+- [StackOverflow](https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages)
 
 ### Images
 - Note: Some of the images listed below are also used as products on the shop page
-- Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
-- Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
-- Smartphone Journey Banner: https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa
+- [Personal Smartphone Banner](https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand)
+- [Smartphone Photography Banner](https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera)
+- [Smartphone Journey Banner](https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa)
 
-- iPhone 11 Brand Examples: https://pixabay.com/de/illustrations/iphone-iphone-11pro-max-apple-4858453/
-- Samsung S10E Brand Example: https://www.flickr.com/photos/nepaltibet2005/46208893305
-- Huawei P30 Pro Bran Example: https://www.flickr.com/photos/janitors/33595154558
-- LG V30 Example: https://commons.wikimedia.org/wiki/File:LG_V30_(cropped).jpg
-- Xiaomi Redmi Note 9 Pro-Max Example: https://pixabay.com/de/illustrations/xiaomi-redmi-redmi-note-9-pro-max-4936657/
+- [iPhone 11 Brand Examples](https://pixabay.com/de/illustrations/iphone-iphone-11pro-max-apple-4858453/)
+- [Samsung S10E Brand Example](https://www.flickr.com/photos/nepaltibet2005/46208893305)
+- [Huawei P30 Pro Bran Example](https://www.flickr.com/photos/janitors/33595154558)
+- [LG V30 Example](https://commons.wikimedia.org/wiki/File:LG_V30_(cropped).jpg)
+- [Xiaomi Redmi Note 9 Pro-Max Example](https://pixabay.com/de/illustrations/xiaomi-redmi-redmi-note-9-pro-max-4936657/)
 
-- Huawei Mate 20 Pro Photography: https://www.flickr.com/photos/janitors/31641238948
-- iPhone Photography: https://www.wallpaperflare.com/iphone-photography-golden-gate-bridge-photo-backgrounds-earth-wallpaper-aazxq
-- Samsung Galaxy S7 Photography: https://www.pexels.com/de-de/foto/samsung-galaxy-s7-rand-schone-blumen-verschwimmen-verwischen-706962/
-- LG Photography: https://www.pxfuel.com/en/free-photo-qfbiw
-- iPhone photography: https://www.pxfuel.com/en/free-photo-qwtlx
+- [Huawei Mate 20 Pro Photography](https://www.flickr.com/photos/janitors/31641238948)
+- [iPhone Photography](https://www.wallpaperflare.com/iphone-photography-golden-gate-bridge-photo-backgrounds-earth-wallpaper-aazxq)
+- [Samsung Galaxy S7 Photography](https://www.pexels.com/de-de/foto/samsung-galaxy-s7-rand-schone-blumen-verschwimmen-verwischen-706962/)
+- [LG Photography](https://www.pxfuel.com/en/free-photo-qfbiw)
+- [iPhone photography](https://www.pxfuel.com/en/free-photo-qwtlx)
 
-- Phone Shopping Link: https://www.flickr.com/photos/robbertjnoordzij/22257890101
+- [Phone Shopping Link](https://www.flickr.com/photos/robbertjnoordzij/22257890101)
 
-- Phone Shop Banner: https://pixnio.com/media/hands-skin-telephone-mobile-phone 
+- [Phone Shop Banner](https://pixnio.com/media/hands-skin-telephone-mobile-phone )
 
-- Favicon: https://commons.wikimedia.org/wiki/File:Mobile-Smartphone-icon.png
+- [Favicon](https://commons.wikimedia.org/wiki/File:Mobile-Smartphone-icon.png)
 
 ##### Other product images
-- Wallpaper Flare: https://www.wallpaperflare.com/phone-samsung-mobile-smartphone-technology-modern-cell-wallpaper-gptpt
-- Wikipedia Commons: https://commons.wikimedia.org/wiki/File:SONY_XPERIA_A_(docomo_SO-04E).jpg
-- Wikipedia: https://de.m.wikipedia.org/wiki/Datei:Nokia_Lumia_1020_front.jpg
-- Wikipedia: https://commons.wikimedia.org/wiki/File:Oppo_R9.png
+- [Wallpaper Flare](https://www.wallpaperflare.com/phone-samsung-mobile-smartphone-technology-modern-cell-wallpaper-gptpt)
+- [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:SONY_XPERIA_A_(docomo_SO-04E).jpg)
+- [Wikipedia](https://de.m.wikipedia.org/wiki/Datei:Nokia_Lumia_1020_front.jpg)
+- [Wikipedia](https://commons.wikimedia.org/wiki/File:Oppo_R9.png)
 
 ## Acknowledgements 
 I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Miklos Samantha, Haley, Luca and Niel for helping me with problems that I encountered.
