@@ -108,7 +108,7 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, accounts app, phoneShop app, checkout app, cart app and for the stripe API. However, I did add my own edits and codes in there, through research, assistance of tutors and [Slack](https://slack.com/intl/en-de/?eu_nc=1) members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
+Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, accounts app, phoneShop app, checkout app, cart app and for the stripe API. However, I did add my own edits and codes in there, through hours and days of research, assistance of tutors and [Slack](https://slack.com/intl/en-de/?eu_nc=1) members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
 
 I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make things, which were not shown in the course, work too. One of those challenges was to create an order history on the profile page from the accounts app. 
 
@@ -254,6 +254,21 @@ $("input[name = 'username']").keyup(function () {
 });
 ```
 
+### Stripe 
+As for stripe, I used everything that was shown in the Code Institute course videos and from those videos I got the code for this project. The videos helped me to understand and use it, like it did with Django. But the problem I had with it was that there was no error that occured, if the CVV field was empty. This is intentional by Stripe, so I had to find a way to make an error occur. I tried using `min_length=1` and `max_length=3` in the CharField for the cvv variable in the MakePayment class of forms.py in the checkout app. But, it did not work and the payment was still successful, when that field was submitted empty. 
+
+```python
+    cvv=forms.CharField(label="Security Code (CVV)", min_length=1, max_length=3, min_length=1, max_length=3, required=False,)
+```
+
+I also tried changing `required=False` to `required=True` in that line of code above and it worked, but then, even if the inputed information in the form was submitted rightly, an error message from stripe occured saying that the payment failed. So, someone on Slack told me to try using the following:
+
+```python 
+    cvv=forms.CharField(label="Security Code (CVV)", min_length=1, max_length=3, required=False, widget=forms.NumberInput(attrs={'required': 'True'}))
+```
+
+This code now works and the stripe fields, errors and payment work correctly now. 
+
 ## Testing
 ### Manual Testing
 - Tried to register with unmatched passwords
@@ -302,6 +317,10 @@ $("input[name = 'username']").keyup(function () {
     - Test worked rightly
 - Tested if the forms and button for purchase on the checkout page disappear if there is no item that has been selected for purchase and checked if the page would say, "No item has been selected to be purchased.", in that case
     - Test worked correctly
+- Tested if all Stripe errors would appear correctly, if a false security number or credit card number is inserted or the wrong month of expriy is selected
+    - Tests worked, the right error messages appeared
+- Checked if all required fields would show an error, if they were empty on submit
+    - Test worked correctly, as the errors showed up
 - Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct logout message
     - Tests worked, the account was logged out and the correct message showed up
 - Tested the responsiveness of the website through a phone and the Chrome DevTools on desktop 
@@ -467,6 +486,7 @@ MEDIA_URL = 'https://%s/%s/'%(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 ```
 
 ## Resources 
+- Note: Out of many other sources that I encountered for tries that failed, these are the sources that ended up assisting me for correct solutions that I was looking for
 - Code Institute: https://codeinstitute.net/
 - Slack: https://slack.com/intl/en-de/?eu_nc=1
 - StackOverflow: https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop
@@ -491,8 +511,8 @@ MEDIA_URL = 'https://%s/%s/'%(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 - StackOverflow: https://stackoverflow.com/questions/21215035/django-test-always-returning-301
 - StackOverflow: https://stackoverflow.com/questions/2897609/how-can-i-unit-test-django-messages
 
-### Image
-- Some of the images listed below are also used as products on the shop page
+### Images
+- Note: Some of the images listed below are also used as products on the shop page
 - Personal Smartphone Banner: https://www.pikrepo.com/fcncs/young-woman-holding-iphone-in-her-right-hand
 - Smartphone Photography Banner: https://www.pikrepo.com/fvhil/man-capturing-a-stunning-sunset-with-his-mobile-iphone-smartphone-camera
 - Smartphone Journey Banner: https://www.wallpaperflare.com/man-using-a-tablet-technology-work-hands-business-smartphone-wallpaper-wkkpa
@@ -523,7 +543,3 @@ MEDIA_URL = 'https://%s/%s/'%(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 ## Acknowledgements 
 I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Miklos Samantha, Haley, Luca and Niel for helping me with problems that I encountered.
-
-
-
-
