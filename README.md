@@ -350,9 +350,15 @@ This code now works and the stripe fields, errors and payment work correctly now
 The local variables that are in the env.py file for this project are, `STRIPE_PUBLISHABLE`, `STRIPE_SECRET`, `DATABASE_URL`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `HOSTNAME`, `SECRET_KEY`, `EMAIL_ADDRESS`, `EMAIL_PASSWORD` and `DEVELOPMENT`. These have the values that are used in the settings.py file that are supposed to remain secret. 
 
 #### Heroku Configuration Variables
-The configuration variables that are on Heroku are, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `DATABASE_URL`, `DEVELOPMENT`, `DISABLE_COLLECTSTATIC`, `HEROKU_POSTGRESQL_IVORY_URL`, `HOSTNAME`, `SECRET_KEY`, `STRIPE_PUBLISHABLE`, `STRIPE_SECRET`. The `DEVELOPMENT` variable is set to 1, while I am working on it, but it is set to False when submitting the project, after working on it. The difference between the Heroku configuration variables are the `HEROKU_POSTGRESQL_IVORY_URL` and the `DISABLE_COLLECTSTATIC` are not needed locally, so they are not in the env.py file
+The configuration variables that are on Heroku are, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `DATABASE_URL`, `DEVELOPMENT`, `DISABLE_COLLECTSTATIC`, `HEROKU_POSTGRESQL_IVORY_URL`, `HOSTNAME`, `SECRET_KEY`, `STRIPE_PUBLISHABLE`, `STRIPE_SECRET`. The `DEVELOPMENT` variable is set to 1, while I am working on it, but it is set to 0 when submitting the project, after working on it. The difference between the Heroku configuration variables are the `HEROKU_POSTGRESQL_IVORY_URL` and the `DISABLE_COLLECTSTATIC` are not needed locally, so they are not in the env.py file
 
 ## Deployment and Publishing 
+### Start A Virtual Environment on VSCode
+- `python3 -m venv myvenv`
+- `virtualenv venv`
+- `virtualenv venv --system-site-packages`
+- `source venv/bin/activate`
+
 ### Deployment to Github
 - `git init` (to create a new Git repository)
 - `git add .`
