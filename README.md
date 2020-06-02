@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Rian1010/Milestone4.svg?branch=master)](https://travis-ci.org/Rian1010/Milestone4)
 
 # Phone-Shop
-This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus is using Django and VSCode was used as code editor. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
+This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus is using Django 1.11.24 and VSCode was used as code editor. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
 
 ## Purpose of This Project
 This project is an e-commerce website to sell trending mobile phones from all over the world. Users can easily search for their desired brands that vary at different prices and can choose how many they want to put into a shopping-cart to purchase. 
