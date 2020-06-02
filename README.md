@@ -103,7 +103,7 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 - Users can search for items through keywords that are included in the items' titles or descriptions
 
 ### Features Left to Implement and Unsolved Bugs
-- I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands
+- I want to add pagination, so that the items are in different brand categories and can click on arrows to scroll through a list of phones by specific brands. I looked into the [Django documentation](https://docs.djangoproject.com/en/3.0/topics/pagination/), but as it is a lot to take in at once and I don't have much time to finish this project, I am leaving it as a feature to try in the future.
 - I made a page for password resets, on which a user is supposed to enter his or her email address to receive an email that links the person to a page for resetting the password however, I only managed to get the email through the terminal, but not in my email inbox. Since I do not have more time to work on it, it is left as a feature that I want to implement in the future. What I tried to do to solve it was to get a Google password for emails from my Google account on the [security page](https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA) and saved it as an environment variable in env.py for EMAIL_PASSWORD, which is in settings.py, but it did not work locally.
 
 ## Process 
