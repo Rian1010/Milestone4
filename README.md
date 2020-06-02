@@ -232,7 +232,6 @@ def user_profile(request, pk=None):
 However, the final problem that I had with was that only one user account could see every accounts history. If any other user bought somethings from another account, they could not see their own history, as it would all be save on the user account that made the very first purchase on the page. Therefore, needed an if statement in the views.py of the checkout app that would authenticate and save a user's ID. 
 
 ```python
-if request.user.is_authenticated:
     order.user_account = request.user
 ```
 Then, I needed to save all of the order information within the if statement, with this line: `order.save()`.
@@ -258,104 +257,127 @@ $("input[name = 'username']").keyup(function () {
 ## Testing
 ### Manual Testing
 - Tried to register with unmatched passwords
-    - Test resulted in the correct error messages
-- Tried to register without filling in a required field
-    - The registration did not work, so the test went right
+    - Test showed the correct error messages
+- Tried to login and register without filling in a required field
+    - The registration did not work and the correct messages for the empty fields were shown, so the test went right
+- Logged in with wrong account information 
+    - The correct error message was returned
 - Registered and logged in
-    - Both tests worked
-- Tried to have access to another web page, besides the home page by clicking on the available buttons before being logged in
-    - Each page lead me to the login page
-- Logged in and scrolled through each page to make sure that the JavaScript on the navigation bars work correctly
-    - It worked correctly on scroll and the item links work rightly on hover, both on ever page
-- Tried typing something into the username input boxes of the login and registration forms to check if the JavaScript code correctly picked up the values to display the letters above the input fields
-    - Test worked
-- Went to the second section of the home page, where phone brand examples are shown, and hovered over the name of the brand to test if JavaScript would display the picture of each phone rightly according to which name I hover on 
+    - Both tests worked and returned the correct success messages
+- Tried to have access to another web page, besides the home page and shop page by clicking on the available buttons before being logged in
+    - Each page lead me to the login page, only the home page and the shop page could be viewed, as supposed to
+- Scrolled through each page to make sure that the JavaScript on the navigation bars work correctly
+    - It worked correctly on scroll on every page
+- Tried typing something into the username input boxes of the login and registration forms to check if the JavaScript code correctly picked up the entered values to display the letters above the input fields
     - Tests worked
-- Checked if the design on each page looks fine responsively and if it is easy to use
-    - Everything is fine now
-- Went to the shop page and tried adding items to the cart buy clicking on the arrows that appear in the input field and tried changing the number manually too
-    - Tests worked
-- Clicked on the add button without inserting a number into the field of an item in the shop page
-    - Message returned correctly, showing that an input is required
-- Clicked on the add button after inserting a number into the input field
+- Went to the second section of the home page, where phone brand examples are shown, and hovered over the name of each brand to test if JavaScript would display the picture of each phone rightly, depending on which name was hovered on 
+    - Tests worked correctly
+- Checked if the design of each page looks fine responsively and if it is easy to use
+    - Everything looks fine now
+- Went to the shop page and tried adding items to the cart page buy clicking on the arrows that appear in the input fields and tried changing the number with a keyboard too
+    - Tests worked rightly
+- Clicked on the add button without inserting a number into the field of an item on the shop page
+    - Field message returned correctly, showing that an input is required
+- Clicked on the add button after inserting a number in the input field
     - Correctly lead me to the cart page with the right information of the added item
 - Added more items to the cart field
-    - Each item was displayed correctly with the right total price at the bottom 
+    - Each item was displayed correctly with the right product details, quantity number and total price at the bottom 
 - Clicked on the checkout button to pay
     - It lead me to the right checkout page and displayed the correct items that were being bought
-- After entering the testing information into the fields, (with 4242 4242 4242 4242 as test credit card number and 111 as security code), I clicked on the pay button
-    - It correctly lead me to the home page, showing the correct message
-- Checked if the user's profile information and order history would show up correctly on the profile page
+- After entering the testing information into the fields, (with 4242 4242 4242 4242 as test credit card number and 111 as test security code), I clicked on the pay button
+    - It correctly lead me to the home page, showing the correct success message
+- Checked if the user's profile information and order history on the profile page would show up correctly
     - Both were rightly displayed with the correct user information and details of each purchased product
-- Tried adding an item to the cart page, inserted a number in the input field next to the amend button and then clicked on the button to change the product's quantity
+- Added an item to the cart page, inserted a number in the input field next to the amend button and then clicked on the amend button to change the product's quantity
     - Test worked
-- Tried adding an item to the cart page, went to the checkout page, inserted a number in the input field next to the amend button and then clicked on the button to change the product's quantity
+- Added an item to the cart page, went to the checkout page, inserted a number in the input field next to the amend button and then clicked on the button to change the product's quantity
     - Test worked
-- Tested if amending an item to 0 on the cart and checkout page would delete an item from both pages
+- Tested if amending an item to 0 on the cart and checkout page would delete an item from both pages, after each of those tests
     - Both tests worked
 - Tested if the cart page would display the correct text and remove the checkout button, when there was no item inside
     - Tests worked
-- Checked if the correct number showed up next to the 'Go to Cart' button in the navigation bar, if there were items in the cart
+- Checked if the correct quantity number showed up, next to the 'Go to Cart' button in the navigation bar, if there were items in the cart
     - Test worked
-- Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct message
-    - Tests worked, the account was logged off and the correct message showed up
+- Checked if the forms and button for purchase appear on the checkout page, if there is at least one selected product to be bought
+    - Test worked rightly
+- Tested if the forms and button for purchase on the checkout page disappear if there is no item that has been selected for purchase and checked if the page would say, "No item has been selected to be purchased.", in that case
+    - Test worked correctly
+- Clicked on the logout button in the navigation bar and checked if it would log out the account and display the correct logout message
+    - Tests worked, the account was logged out and the correct message showed up
 - Tested the responsiveness of the website through a phone and the Chrome DevTools on desktop 
     - Tests worked well on all device-sizes
 ### Automated Testing
-- Did some automated testing in order to test if all the views in the accounts and checkout apps return the correct statuses to see if they link to the right templates correctly 
+- Did some automated testing in order to test if all the views in the accounts and checkout apps returned the correct statuses to see if the functions worked correctly
     - All tests worked fine
 #### Tests for the accounts app
 - Tested if the logout view and its success message work correctly through the test_logout function 
-    - That test went rightly too
+    - That test went rightly
 - Tested the forms of the accounts app to see, if the email, username, password1 and password2 were validated correctly in the registration
     - Tests passed rightly
-- Tested if empty the right error message would appear, if no value was given for email, username, password1 and password2
-    - Tests Passed correctly, as well
+- Tested if the right error message would appear, if no value was given for email, username, password1 and password2
+    - Tests Passed correctly
 #### Tests for the checkout app
-- Tested if the BuyProduct model would work, if correct information was given from a logged in user in the test_buy_product function
+- Tested in the test_buy_product function, if the BuyProduct model would work, if correct information was given from a logged in user
     - Tests run correctly
 - Tested if the string function of the BuyProduct model returned the right information, through the test_order_as_string
     - Tests worked rightly
-- Tested in the test_order_line_item_as_string function, if the string function of the OrderLineItem model returned the correct information, through user login and having order information in the BuyProduct Model
+- Tested in the test_order_line_item_as_string function, if the string function of the OrderLineItem model returned the correct information, through having a user be logged in and having order information in the BuyProduct model
     - Tests run fine
-- Test in the test_order_history function if the orders would go to the order history on the profile page correctly
+- Tested in the test_order_history function if the orders would go to the order history on the profile page correctly
     - Tests run well
 
-### Installing and Using Coverage
-- sudo pip3 install coverage
-- coverage run manage.py test
-- coverage run --source=app_name manage.py test
-- coverage report (Shows how much code has been tested)
-- coverage html
-- Display the HTML page to see the parts of an app that needs to be tested
+## Environment and Configuration Variables
+#### Local Variables
+The local variables that are in the env.py file for this project are, 'STRIPE_PUBLISHABLE', 'STRIPE_SECRET', 'DATABASE_URL', 'AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'HOSTNAME', 'SECRET_KEY', 'EMAIL_ADDRESS', 'EMAIL_PASSWORD' and 'DEVELOPMENT'. These have the values that are used in the settings.py file that are supposed to remain secret. 
+
+#### Heroku Configuration Variables
+The configuration variables that are on Heroku are, 'AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'DATABASE_URL', 'DEVELOPMENT', 'DISABLE_COLLECTSTATIC', 'HEROKU_POSTGRESQL_IVORY_URL', 'HOSTNAME', 'SECRET_KEY', 'STRIPE_PUBLISHABLE', 'STRIPE_SECRET'. The 'DEVELOPMENT' variable is set to 1, while I am working on it, but it is set to False when submitting the project, after working on it. The difference between the Heroku configuration variables are the 'HEROKU_POSTGRESQL_IVORY_URL' and the 'DISABLE_COLLECTSTATIC' are not needed locally, so they are not in the env.py file
 
 ## Deployment and Publishing 
 ### Deployment to Github
-- git add .
-- git status
-- git commit -m "a short description of the update"
-- git remote add origin 
-- git push origin master
+- `git init` (to create a new Git repository)
+- `git add .`
+- `git status`
+- `git commit -m "a short description of the update"`
+- `git remote add origin `
+- `git push origin master`
 
 ### Heroku Deployment
-- In Resources, add Heroku Postgres in add-ons
-- Get the DATABASE_URL in the conguration variables and copy it into the env.py file
-- os.environ.setdefault("DATABASE_URL", "postgres://---")
-- Do the same to SECRET_KEY and STRIPE_PUBLISHABLE
-- sudo pip3 install dj-database-url
-- sudo pip3 install psycopg2-binary
-- pip3 freeze > requirements.txt
+- Use the following command:
+    - `heroku login`
+    - Enter email address and password
+- Install gunicorn for running the application on the server
+- I used the following to command to create this project on Heroku, as I am in the EU
+    - `heroku create milestone4-django-phone-shop --region eu`
+- To set up a database, go to the Heroku page, under 'Resources' and add Heroku Postgres in add-ons or use the following command:
+    - `heroku addons:create heroku-postgresql:hobby-dev`
+- Get the DATABASE_URL in the configuration variables or through the `heroku config` commang, and copy it
+- Put it into the env.py file, as in os.environ.setdefault("DATABASE_URL", "postgres://---")
+- Also do that to SECRET_KEY and STRIPE_PUBLISHABLE, so add those into the heroku configuration variables and the env.py file
+- Use the following command to install django database URL, which allows to parse database URLs
+    - `sudo pip3 install dj-database-url`
+- Use the following command to connect to a PostgresSql database
+    - `sudo pip3 install psycopg2-binary`
+- `pip3 freeze > requirements.txt` (Tells Heroku what installations were are required)
 - import dj_database_url in settings.py
-- Switch DATABASE to postgres in settings.py
-- Migrate the existing migrations to the postgres database, although there are no changes detected through python3 manage.py makemigrations (use the following commands: `python3 manage.py makemigrations`, `python3 manage.py migrate`)
-
+- Switch DATABASE to postgresSQL in settings.py
+- Migrate the existing migrations to the postgres database, (use the following command: `python3 manage.py migrate`)
+- On the Heroku website, in the project, under 'Deploy', conntect Github, find the repository to the project and click on the button that enables automatic deployment
 - For the website to work on Heroku, the statics must be disabled, through `DISABLE_COLLECTSTATIC=1`
+- Repeat the steps to deploy to github by using all the same commands, except for `git init`
+
+### Installing and Using Coverage
+- `sudo pip3 install coverage`
+- `coverage run --source=app_name manage.py test` (Runs tests)
+- `coverage report` (Shows how much code has been tested)
+- `coverage html` (Gets the index.html page generated from coverage)
+- Display the HTML page to see the parts of an app that have and have not been tested
 
 ### Amazon Web Services
 - Once logged in, choose S3 
 - Untick all checkboxes in 'Set Permissions'
 - Open the bucket
-- Go to Properties and then 'Static website hosting'
+- Go to 'Properties' and then 'Static website hosting'
 - Click on 'Use this bucket to host a website' and insert 'index.html' and 'error.html'
 - Click on Permissions, then CORS configuration
 - Write the following code in it:
@@ -371,7 +393,7 @@ $("input[name = 'username']").keyup(function () {
 </CORSConfiguration>
 ```
 - Click on Bucket Policy
-- Paste in the following:
+- Write in the following code:
 ```javascript
 {
     "Version":"2012-10-17",
@@ -386,23 +408,24 @@ $("input[name = 'username']").keyup(function () {
   ]
 }
 ```
-- Replace example-bucket, in the code, with what's given above the box (Name of the bucket)
-- Go to dashboard through one of the things that can be pinned in the navigation bar, called IAM, then click on groups to create a group
+- Replace `example-bucket`, in the code, with name of the bucket (Given above the code box)
+- Go to the dashboard of 'IAM', which is in the list of selections that appears, when clicking on the pin icon in the navigation bar, 
+- Click on groups to create a group
 - Click on Policy and Create a new policy
 - Click on Import managed policy
 - Search for s3 and choose AmazonS3FullAccess
 - In JSON, change the string from 'Resource' to a list and add ["arn:aws:s3:::bucket-name"], ["arn:aws:s3:::bucket-name/*"]
 - Click on the Review Policy button and give it a name, such as bucket-name-policy
-- Go to the created group, go to permissions, search for the policy just created, check it and click on the 'Attach policy' button
-- Click on Users in the side-navigation-bar, then click on Add User and name it with something that is associated with the bucket name and tick programmatic access
-- Choose the created group, skip the keys, as they're not needed and create the user
-- It is very important to make sure to download the .csv, this has the access keys needed in the software. It's important to keep them safe. One is never able to generate them again.
+- Go to the created group, go to 'Permissions', search for the policy just created, check it and click on the 'Attach policy' button
+- Click on Users in the side-navigation-bar, then click on 'Add User' and name it with something that is associated with the bucket name and tick 'Programmatic Access'
+- Choose the created group, skip the keys, as they are not needed and create the user
+- It is very important to make sure to download the .csv, as it has the access keys needed in the software and it is important to keep them safe because one is never able to generate them again, otherwise a new bucket needs to be created
 - Go back to S3, click on the bucket and test it by trying to upload a file
 - The image should have a link that can be accessed from anywhere
 
 ## Change the code for S3
-- sudo pip3 install django-storages
-- sudo pip3 install boto3 
+- `sudo pip3 install django-storages`
+- `sudo pip3 install boto3 `
 - Include 'storages' to INSTALLED-APPS in settings.py
 
 - For AWS to save the static and media folders, the following content needs to be added to the custom_storages.py file:
@@ -416,12 +439,31 @@ class StaticStorage(S3Boto3Storage):
 class MediaStorage(S3Boto3Storage):
     location = settings.MEDIAFILES_LOCATION
 ```
+
 And this code below must be added to the settings.py file for it to work:
+
 ```python
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000'
+}
+
+AWS_STORAGE_BUCKET_NAME = 'django-ecommerce-rian'
+AWS_S3_REGION_NAME = 'eu-west-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+STATIC_URL = '/static/'
+
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'https://%s/%s/'%(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 ```
 
 ## Resources 
@@ -442,6 +484,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 - MiniWebtool: https://miniwebtool.com/django-secret-key-generator/
 - compressjpeg: https://compressjpeg.com/
 - compresspng: https://compresspng.com/
+- Google Security page: https://myaccount.google.com/security?rapt=AEjHL4Mps0KBp02VHygwrbuviAPywFDORznFPftIXniGD1tb5dpI0u8nYM9JEKf6lT1RfHcwsLY6aLBlatEFwztsC0KZbf1DzA
 
 ### Resources that helped me for testing 
 - StackOverflow: https://stackoverflow.com/questions/16143149/django-testing-check-messages-for-a-view-that-redirects/42252248
@@ -479,7 +522,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 - Wikipedia: https://commons.wikimedia.org/wiki/File:Oppo_R9.png
 
 ## Acknowledgements 
-I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Samantha, Haley, Luca and Niel for helping me with the problems that I encountered.
+I was inspired to do this project by [Code Institute](https://codeinstitute.net/). Thank you to my mentor, Brian Macharia to guide me throughout the process of the project! Thank you to the tutors, Michael, Tim, Xavier, Anna, Stephan, Kevin, Miklos Samantha, Haley, Luca and Niel for helping me with problems that I encountered.
 
 
 

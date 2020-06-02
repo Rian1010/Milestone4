@@ -19,6 +19,13 @@
     <div class="container text-center">
         <h1>Checkout</h1>
     </div>
+    <!-- If statement that prevents users to purchase something on the checkout page, if 
+    no item has been selected to be bought -->
+    {% if total == 0 %}
+    <div class="container text-center">
+        <h2>No item has been selected to be purchased.</h2>
+    </div>
+    {% else %}
     <!-- Shows the item/s that are being bought -->
     <div class="container">
         {% for item in cart_items %}
@@ -68,6 +75,7 @@
             </div>
         </form>
     </div>
+    {% endif %}
 </section>
 {% endblock %}
 
