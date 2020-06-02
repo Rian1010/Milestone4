@@ -26,7 +26,6 @@ def checkout(request):
                 order = order_form.save(commit=False)
                 order.date = timezone.now()
                 
-                # if request.user.is_authenticated:
                 order.user_account = request.user
                 cart = request.session.get('shopping_cart', {})    
                 total=0
