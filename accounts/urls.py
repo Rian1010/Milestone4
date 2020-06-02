@@ -1,7 +1,10 @@
 from django.conf.urls import url, include
 from accounts.views import logout, login, registration, user_profile
 from accounts import urls_reset
-"""I learned how to write this code bellow through Code Institute and it is the only way I know doing it ´. Source: https://codeinstitute.net/"""
+"""
+I learned how to write this code below through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 urlpatterns = [

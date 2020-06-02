@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
-"""I learned how to write the code bellow through Code Institute and it is the only way I know doing it. 
-Source: https://codeinstitute.net/"""
+"""
+I learned how to write the code bellow through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 class EmailAuth:

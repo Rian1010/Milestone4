@@ -6,7 +6,8 @@ from checkout.models import BuyProduct, OrderLineItem
 from django.utils import timezone
 """
 A tutor called Michael has assisted me with some mistakes that I made, when trying to 
-get the functions in the class below to run rightly. Source: https://codeinstitute.net/
+get the functions in the class below to run rightly. 
+Source: https://codeinstitute.net/
 """
 
 

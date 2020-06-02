@@ -2,8 +2,10 @@ from django.db import models
 from phoneShop.models import Product
 from django.contrib.auth.models import User
 from django import forms
-"""I learned how to write most of the code bellow through Code Institute and it is the only way I know how to do it. 
-Source: https://codeinstitute.net/"""
+"""
+I learned how to write most of the code below through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 class BuyProduct(models.Model):

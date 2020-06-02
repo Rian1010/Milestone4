@@ -1,7 +1,9 @@
 from django import forms
 from .models import BuyProduct
-"""I learned how to write the code bellow through Code Institute and it is the only way I know how to do it. 
-Source: https://codeinstitute.net/"""
+"""
+I learned how to write the code below through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 class MakePayment(forms.Form):

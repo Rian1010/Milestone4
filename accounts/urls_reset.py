@@ -1,7 +1,10 @@
 from django.conf.urls import url
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
-"""I learned how to write this code bellow through Code Institute and it is the only way I know doing it ´. Source: https://codeinstitute.net/"""
+"""
+I learned how to write this code below through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 urlpatterns = [

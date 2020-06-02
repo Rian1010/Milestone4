@@ -1,3 +1,6 @@
+// I learned how to write the code bellow through Code Institute
+// Source: https://codeinstitute.net/
+
 $(function () {
     $('#payment-form').submit(function () {
         let form = this;

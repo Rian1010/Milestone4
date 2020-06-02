@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from accounts.views import login
 from django.contrib.auth.decorators import login_required
-"""I learned how to write the code bellow through Code Institute and it is the only way I know how to do it. 
+"""I learned how to write the code below through Code Institute. 
 Source: https://codeinstitute.net/"""
 
 

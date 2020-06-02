@@ -1,6 +1,9 @@
 from django.test import TestCase
 from .forms import UserRegistrationForm, UserLoginForm
-"""I learned how to use this code bellow through Code Institute. Source: https://codeinstitute.net/"""
+"""
+I learned how to use this code bellow through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 # Create your tests here.

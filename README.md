@@ -108,9 +108,9 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, phoneShop app, checkout app and cart app. However, I did add my own edits and codes in there, through research, assistance of tutors and Slack members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
+Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, accounts app, phoneShop app, checkout app, cart app and for the stripe API. However, I did add my own edits and codes in there, through research, assistance of tutors and [Slack](https://slack.com/intl/en-de/?eu_nc=1) members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
 
-I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make things, which were not shown in the course, work. One of those challenges was to create an order history on the profile page. 
+I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make things, which were not shown in the course, work too. One of those challenges was to create an order history on the profile page from the accounts app. 
 
 At first, I asked a tutor from Code Institute lots of questions to understand things to tackle this challenge better. So, I tried the following:
 
@@ -120,9 +120,9 @@ print(test.quantity, test.product.name, test.product.price)
 return render(request, "profile.html", {"test": test, "profile": user})
 ```
 
-In the code above, I wanted to get each primary key of the OrderLineItem and print some of the required information. This then worked, but I could not grab everything that I needed from that model. 
+In the code above, I wanted to get each primary key of the OrderLineItem and print some of the required information. But, I could not grab everything that I needed from that model. 
 
-So, after talking to tutors from Code Institute again, explaining more of what I was trying to do. My next try was the following:
+So, after research and talking to tutors from Code Institute again, explaining more of what I was trying to do. My next try was the following:
 
 ```python
 if request.user.is_authenticated:
@@ -138,17 +138,15 @@ if request.user.is_authenticated:
                                             })
 ```
 
-At that point, I thought I had it, because this print statement was printing out the querysets, and the orders were working fine in the templates, but the problem was that the history variable was only available inside of the for loop, so it did not show up in the templates. I tested it by printing the same print statement outside of the for loop and it was empty. 
+At that point, I thought I had it, because this print statement was printing out the querysets, and the orders were working fine in the templates, but the problem was that the history variable was only available inside of the for loop and only showed each queryset, so it did not show up in the templates. I tested it by printing the same print statement, which I have in that code, outside of the for loop, but it was empty. 
 
-Therefore, I needed to append `history = order.lineitems.all()` and I failed trying the following code:
+Therefore, I needed to append `history = order.lineitems.all()` to a list outside of the for loop and I failed trying the following code:
 ```python
     history = []
     for order in orders:
         history.append(order.lineitems.all())
-    for hist in history:
-        print(hist)
 ```
-This code returned querysets again.
+This code returned querysets again. So, I tried various other ways of looping through the information below. 
 
 ```python
 
@@ -161,7 +159,7 @@ This code returned querysets again.
 ```
 I learned about this code, above from [StackOverflow](https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop), [W3Schools](https://www.w3schools.com/python/python_file_handling.asp) and [Reading and Writing files in Pure Python Documentation](https://python4mpia.github.io/pure_python/files.html)
 
-Someone from the course, on Slack, who seems to often help others told me to try the following for loop, so I googled it, trying to understand it and this is what I did:
+Someone from the course, on Slack, who seems to often help students, told me to try the following type of for loop, so I googled it, trying to understand it and this is what I did:
 
 ```python
 for i, c in enumerate(history):
@@ -169,7 +167,7 @@ for i, c in enumerate(history):
         print(i, c, type(c))
     print(history.value_list())
 ```
-This printed each queryset next to its index number. So I still could not get the information from the queryset correctly in the template. Then, I showed it to a tutor from Code Institute again, who told me that I have to loop through it twice to get the correct details. It worked and this is what the function looked like at that point.
+This printed each queryset next to its index number. So, I still could not correctly get the information from the queryset in the template. Then, I showed it to a tutor from Code Institute again, who told me that I have to loop through it twice to get the correct details and explained me things about querysets. It worked and this is what the function looked like at that point.
 
 ```python
 @login_required
@@ -194,7 +192,7 @@ def user_profile(request, pk=None):
     return render(request, 'profile.html', context)
 
 ```
-Although it printed out the correct things and I could show the right information on the profile page, I could not show orders and history within the same for loop. I tried using zip or nesting the two for loops and then using an if statement, like so:  
+Although it printed out the correct details and I could show the right information on the profile page in the templates, I could not show orders and history within the same for loop in Jinja2. I tried using zip or nesting the two for loops and then using an if statement, like so:  
 ```html
 {% for info in orders %}
     {% for purchase in history %}
@@ -231,7 +229,15 @@ def user_profile(request, pk=None):
 {% endfor %}
 ```
 
-In the search app, another challenge was to allow users to search for products with keywords that target both, the name and description of the product, instead of just its name. At first I tried using two variables to filter them separately, which did not work correctly. Later, I found out about Q objects and used the [django documentation](https://docs.djangoproject.com/en/3.0/ref/models/querysets/), as assistance to get it to work in the views.py file of the search app. Here is the code that I ended up writing, which works:
+However, the final problem that I had with was that only one user account could see every accounts history. If any other user bought somethings from another account, they could not see their own history, as it would all be save on the user account that made the very first purchase on the page. Therefore, needed an if statement in the views.py of the checkout app that would authenticate and save a user's ID. 
+
+```python
+if request.user.is_authenticated:
+    order.user_account = request.user
+```
+Then, I needed to save all of the order information within the if statement, with this line: `order.save()`.
+
+In the search app, another challenge was to allow users to search for products with keywords that target both, the name and description of the product, instead of just its name. At first I tried using two variables to filter them separately in the views.py file of the search app, which did not work correctly. Later, I found out about Q objects and used the [django documentation](https://docs.djangoproject.com/en/3.0/topics/db/queries/), as assistance to get it to work. Here is the code that I ended up writing, which works:
 
 ```python
 def search_function(request):
@@ -420,6 +426,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 ## Resources 
 - Code Institute: https://codeinstitute.net/
+- Slack: https://slack.com/intl/en-de/?eu_nc=1
 - StackOverflow: https://stackoverflow.com/questions/25406399/python-get-variable-outside-the-loop
 - W3Schools: https://www.w3schools.com/python/python_file_handling.asp
 - Reading and Writing files in Pure Python Documentation: https://python4mpia.github.io/pure_python/files.html

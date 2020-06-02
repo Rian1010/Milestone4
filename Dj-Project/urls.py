@@ -23,8 +23,10 @@ from search import urls as search_url
 from cart import urls as url_cart
 from django.views import static
 from .settings import MEDIA_ROOT
-"""I learned how to write the code bellow through Code Institute and it is the only way I know how to do it. 
-Source: https://codeinstitute.net/"""
+"""
+I learned how to write the code bellow through Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 
 urlpatterns = [

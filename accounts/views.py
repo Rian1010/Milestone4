@@ -71,9 +71,12 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {"registration_form": registration_form})
 
-"""I learned how to get a user's account information from Code institute (https://codeinstitute.net/), but I got the order history in the
-user_profile function through days of research and tutors and Slack members from Code Institute helping me."""
-# https://stackoverflow.com/questions/10582958/django-keep-each-users-data-separate
+"""
+I learned how to get a user's account information from Code institute (https://codeinstitute.net/), but I got the order history in the
+user_profile function through days of research and tutors and Slack(https://slack.com/intl/en-de/) members 
+from Code Institute, who helped me. This is a source that assisted me to 
+write this code below: https://stackoverflow.com/questions/10582958/django-keep-each-users-data-separate
+"""
 @login_required
 def user_profile(request, pk=None):
     """The user's profile page should return it with the account's order history"""

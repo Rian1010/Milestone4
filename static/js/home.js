@@ -75,7 +75,7 @@ $(document).ready(function () {
     });
 
     // ------------------------------------------ Login Username ------------------------------------------ //
-
+    // Used the the following source for the code below: https://api.jquery.com/val/
     $("input[name = 'username']").keyup(function () {
         let nameVal = $(this).val();
         $('.username').text(` ${[nameVal]}`);
