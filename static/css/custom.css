@@ -208,7 +208,7 @@
     padding: 20px;
 }
 
-.total-value-position {
+.flex-center {
     display: flex;
     justify-content: center;
 }
@@ -434,6 +434,14 @@
 .shop-button:hover {
     background-color: orange;
 }
+
+/* Mobile Positioning for the Amend Button on the Checkout Page */
+@media (max-width: 576px) { 
+    .amend-button-width{
+        width: 100%;
+    }
+ }
+
 
 /* Footer */
 footer {

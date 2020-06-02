@@ -38,7 +38,7 @@
                             <input name="quantity" type="number" min="0" max="999" class="form-control" required>
                         </div>
                         <div class="form-group">
-                        <button type="submit" class="btn btn-primary total-value-position">
+                        <button type="submit" class="btn btn-primary flex-center">
                             Amend
                         </button>
                     </div>
@@ -52,13 +52,13 @@
     <!-- Shows the total price of each product -->
     <div class="container">
         <div class="row">
-            <div class="col-12 total-value-position">
+            <div class="col-12 flex-center">
                 <p>Total: {{ total }}€</p>
             </div>
         </div>
         {% if total != 0 %}
         <div class="row">
-            <div class="col-12 total-value-position">
+            <div class="col-12 flex-center">
                 <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
             </div>
         </div>
