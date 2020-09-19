@@ -90,7 +90,7 @@ $(document).ready(function () {
 
     // SCENES
     const scene = new ScrollMagic.Scene({
-        duration: 30000,
+        duration: 10000,
         triggerElement: intro,
         triggerHook: 0
     })
@@ -113,6 +113,6 @@ $(document).ready(function () {
         console.log(scrollpos, delay);
 
         video.currentTime = delay
-    }, 333.33);
+    }, 100);
 
 });
