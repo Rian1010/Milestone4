@@ -49,6 +49,10 @@
         </a>
     </div>
 </section>
+<!-- Apple Ad 1 -->
+<section class="apple-ad-1" style="height: 100vh;">
+    <video id="Ad1" src="/static/videos/Apple-Ad.mp4" style="height: 100%; width: 100%; object-fit: cover;"></video>
+</section>
 <!-- Brand Examples -->
 <section class="examples-section-padding">
     <div class="container-fluid">
@@ -117,5 +121,9 @@
 {% endblock %}
 
 {% block js_tags %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
 <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

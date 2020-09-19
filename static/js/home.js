@@ -80,4 +80,39 @@ $(document).ready(function () {
         let nameVal = $(this).val();
         $('.username').text(` ${[nameVal]}`);
     });
+
+    // ------------------------------------------  Ad Scroll Effect ------------------------------------------ //
+    const intro = document.querySelector('.apple-ad-1');
+    const video = document.getElementById('Ad1');
+
+    // SCROLLMAGIC
+    const controller = new ScrollMagic.Controller();
+
+    // SCENES
+    const scene = new ScrollMagic.Scene({
+        duration: 30000,
+        triggerElement: intro,
+        triggerHook: 0
+    })
+    .addIndicators()
+    .setPin(intro)
+    .addTo(controller)
+
+    // Video Animation
+    let accelamount = 0.1;
+    let scrollpos = 0;
+    let delay = 0;
+
+    scene.on('update', e => {
+        scrollpos = e.scrollPos / 1000;
+        console.log(e);
+    });
+
+    setInterval(() => {
+        delay += (scrollpos - delay) * accelamount;
+        console.log(scrollpos, delay);
+
+        video.currentTime = delay
+    }, 333.33);
+
 });

@@ -97,6 +97,17 @@
     color: #fff;
 }
 
+/* Ads */
+.apple-ad-1 {
+    height: 100vh;
+}
+
+.apple-ad-1 video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Sections */
 .section-padding {
     padding: 70px 0;
