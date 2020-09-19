@@ -8,7 +8,7 @@ from django.utils import timezone
 from phoneShop.models import Product
 import stripe
 """
-I learned how to write the code below through Code Institute. 
+I learned how to write parts of the code below through Code Institute. 
 Source: https://codeinstitute.net/
 """
 

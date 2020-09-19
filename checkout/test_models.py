@@ -5,8 +5,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 """
-A tutor from Code Institute (https://codeinstitute.net/), called Michael has helped me a lot to understand the logic of my mistakes of trying to 
-get the functions in the class below to run rightly.
+A tutor from Code Institute (https://codeinstitute.net/), called Michael has helped me to understand the logic of my mistakes of trying to 
+get the functions in the class below to run correctly.
 """
 
 

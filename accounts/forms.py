@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 """
-I learned how to write the code below through Code Institute. 
+I learned how to write parts the code below through Code Institute. 
 Source: https://codeinstitute.net/
 """
 

@@ -3,7 +3,7 @@ from phoneShop.models import Product
 from django.contrib.auth.models import User
 from django import forms
 """
-I learned how to write most of the code below through Code Institute. 
+I learned how to write parts of the code below through Code Institute. 
 Source: https://codeinstitute.net/
 """
 

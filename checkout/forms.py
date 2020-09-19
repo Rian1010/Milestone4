@@ -1,7 +1,7 @@
 from django import forms
 from .models import BuyProduct
 """
-I learned how to write the code below through Code Institute. 
+I learned how to write parts of the code below through Code Institute. 
 Source: https://codeinstitute.net/
 """
 

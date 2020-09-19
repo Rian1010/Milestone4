@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from .views import cart_views, cart_additions, cart_adjustments 
 from accounts.views import user_profile
-"""I learned how to write the code below through Code Institute. 
+"""I learned how to write parts of the code below through Code Institute. 
 Source: https://codeinstitute.net/"""
 
 

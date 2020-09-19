@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 from phoneShop.models import Product
-"""I learned how to write the code below through Code Institute. 
+"""I learned how to write parts of the code below through Code Institute. 
 Source: https://codeinstitute.net/"""
 
 

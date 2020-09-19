@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .forms import UserRegistrationForm, UserLoginForm
 """
-I learned how to use this code bellow through Code Institute. 
+I learned how to write parts of the code below from Code Institute. 
 Source: https://codeinstitute.net/
 """
 

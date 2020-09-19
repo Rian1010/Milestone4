@@ -7,11 +7,11 @@ from phoneShop.models import Product
 from django.utils import timezone
 from checkout.forms import OrderForm, MakePayment
 from checkout.models import OrderLineItem, BuyProduct
-"""
-I learned how to write most of the code of the login, logout, index and register functions 
-through Code Institute and it is the only way I know doing it. Source: https://codeinstitute.net/
-"""
 
+"""
+I learned how to write some parts of the code below from Code Institute. 
+Source: https://codeinstitute.net/
+"""
 
 def index(request):
     """Return the index file"""
@@ -71,12 +71,6 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {"registration_form": registration_form})
 
-"""
-I learned how to get a user's account information from Code institute (https://codeinstitute.net/), but I got the order history in the
-user_profile function through days of research and tutors and Slack(https://slack.com/intl/en-de/) members 
-from Code Institute, who helped me. This is a source that assisted me to 
-write this code below: https://stackoverflow.com/questions/10582958/django-keep-each-users-data-separate
-"""
 @login_required
 def user_profile(request, pk=None):
     """The user's profile page should return it with the account's order history"""
