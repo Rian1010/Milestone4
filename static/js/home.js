@@ -92,11 +92,10 @@ $(document).ready(function () {
 
     // SCENES
     const scene = new ScrollMagic.Scene({
-        duration: 3000,
+        duration: 4000,
         triggerElement: intro,
         triggerHook: 0
     })
-    .addIndicators()
     .setPin(intro)
     .addTo(controller)
 
@@ -104,7 +103,7 @@ $(document).ready(function () {
     const textAnim = TweenMax.fromTo(text, 3, {bottom: 0, opacity: 0}, {bottom: 200, opacity: 1});
 
     const scene2 = new ScrollMagic.Scene({
-        duration: 3000,
+        duration: 4000,
         triggerElement: intro,
         triggerHook: 0
     })
