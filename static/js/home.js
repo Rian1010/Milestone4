@@ -84,13 +84,15 @@ $(document).ready(function () {
     // ------------------------------------------  Ad Scroll Effect ------------------------------------------ //
     const intro = document.querySelector('.apple-ad-1');
     const video = document.getElementById('Ad1');
+    const text = document.querySelector('.Ad1-Text');
+    // const text2 = document.querySelector('.Ad1-Text2');
 
     // SCROLLMAGIC
     const controller = new ScrollMagic.Controller();
 
     // SCENES
     const scene = new ScrollMagic.Scene({
-        duration: 10000,
+        duration: 3000,
         triggerElement: intro,
         triggerHook: 0
     })
@@ -98,10 +100,37 @@ $(document).ready(function () {
     .setPin(intro)
     .addTo(controller)
 
+    // Text Animation
+    const textAnim = TweenMax.fromTo(text, 3, {bottom: 0, opacity: 0}, {bottom: 200, opacity: 1});
+
+    const scene2 = new ScrollMagic.Scene({
+        duration: 3000,
+        triggerElement: intro,
+        triggerHook: 0
+    })
+    .setTween(textAnim)
+    .addTo(controller);
+
     // Video Animation
-    let accelamount = 0.1;
+    // let accelamount = 0;
     let scrollpos = 0;
-    let delay = 0;
+    // let delay = 0;
+
+    // Text Animation 2
+    // const textAnim2 = TweenMax.fromTo(text2, 3, {bottom: 0, opacity: 0}, {bottom: 200, opacity: 1});
+
+    // const scene3 = new ScrollMagic.Scene({
+    //     duration: 3000,
+    //     triggerElement: intro,
+    //     triggerHook: 0
+    // })
+    // .setTween(textAnim2)
+    // .addTo(controller);
+
+    // Video Animation
+    // let accelamount = 0;
+    // let scrollpos = 0;
+    // let delay = 0;
 
     scene.on('update', e => {
         scrollpos = e.scrollPos / 1000;
@@ -109,10 +138,11 @@ $(document).ready(function () {
     });
 
     setInterval(() => {
-        delay += (scrollpos - delay) * accelamount;
-        console.log(scrollpos, delay);
+        // delay += (scrollpos - delay) * accelamount;
+        // console.log(scrollpos, delay);
 
-        video.currentTime = delay
+        video.currentTime = scrollpos
     }, 100);
+
 
 });
