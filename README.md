@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Rian1010/Milestone4.svg?branch=master)](https://travis-ci.org/Rian1010/Milestone4)
 
 # Phone-Shop
-This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus is using Django 1.11.24 and VSCode was used as code editor. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
+This is my fourth milestone project that I have done on the Full Stack Software Development course at Code Institute. In this project, the main focus is using Django 1.11.24 and VSCode was used as code editor. I was inspired by [Apple's](https://www.apple.com/iphone-se/) new web pages, [Patreons](https://www.patreon.com/europe) old website and [Code Institute](https://codeinstitute.net/) to build this website. The project is published [here](https://milestone4-django-phone-shop.herokuapp.com/).
 
 ## Purpose of This Project
 This project is an e-commerce website to sell trending mobile phones from all over the world. Users can easily search for their desired brands that vary at different prices and can choose how many they want to put into a shopping-cart to purchase. 
@@ -108,7 +108,7 @@ Some of the ideas that are shown in the wireframes have been changed throughout 
 
 ## Process 
 ### Django
-Most of the Django code was heavily inspired from what's been taught at [Code Institute](https://codeinstitute.net/). I used the code that I learned from them in the search app, accounts app, phoneShop app, checkout app, cart app and for the stripe API. However, I did add my own edits and codes in there, through hours and days of research, assistance of tutors and [Slack](https://slack.com/intl/en-de/?eu_nc=1) members of the Code Institute course and through my own understanding. The codes that I learned from outside of the course are indicated in this README.md file, below.
+I got lots of help to understand Django from the course and spent hours and days researching and asked questions to tutors and [Slack](https://slack.com/intl/en-de/?eu_nc=1) members of Code Institute. The codes that I learned from outside of the course are indicated in this README.md file, below.
 
 I was able to use and understand a lot of what has been taught at Code Institute, but I spent loads of time trying to figure out how to make things, which were not shown in the course, work too. One of those challenges was to create an order history on the profile page from the accounts app. 
 
