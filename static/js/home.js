@@ -92,7 +92,7 @@ $(document).ready(function () {
 
     // SCENES
     const scene = new ScrollMagic.Scene({
-        duration: 10000,
+        duration: 9500,
         triggerElement: intro,
         triggerHook: 0
     })
