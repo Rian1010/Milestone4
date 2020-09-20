@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
 
     // ------------------------------------------  Ad Scroll Effect ------------------------------------------ //
-    const intro = document.querySelector('.apple-ad-1');
+    const intro = document.querySelector('.samsung-ad');
     const video = document.getElementById('Ad1');
     const text = document.querySelector('.Ad1-Text');
     // const text2 = document.querySelector('.Ad1-Text2');

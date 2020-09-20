@@ -118,11 +118,11 @@
     text-align: center;
 }
 
-.apple-ad-1 {
+.samsung-ad {
     height: 100vh;
 }
 
-.apple-ad-1 video {
+.samsung-ad video {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -136,10 +136,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 992px) {
+    .testimonial-section {
+        background-attachment: fixed;
+    }
 }
 
 .blockquote-colour {
@@ -476,10 +481,15 @@
     background-size: cover;
     background-repeat: var(--main-bg-repeat);
     background-position: var(--main-center-position);
-    background-attachment: fixed;
     display: flex;
     justify-content: var(--main-center-position);
     align-items: var(--main-center-position);
+}
+
+@media (min-width: 992px) {
+    .link-to-shop-section {
+        background-attachment: fixed;
+    }
 }
 
 .shop-button {
