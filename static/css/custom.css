@@ -110,12 +110,12 @@
 
 .Ad1-Text {
     position: absolute;
-    bottom: 0%;
-    left: 32%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: 80px;
-    color: rgba(0, 18, 255, 0.8);
-    text-align: left;
+    color: #fff;
+    text-align: center;
 }
 
 .apple-ad-1 {

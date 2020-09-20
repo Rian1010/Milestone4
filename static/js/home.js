@@ -92,27 +92,29 @@ $(document).ready(function () {
 
     // SCENES
     const scene = new ScrollMagic.Scene({
-        duration: 4000,
+        duration: 10000,
         triggerElement: intro,
         triggerHook: 0
     })
+    .addIndicators()
     .setPin(intro)
     .addTo(controller)
 
     // Text Animation
-    const textAnim = TweenMax.fromTo(text, 3, {bottom: 0, opacity: 0}, {bottom: 200, opacity: 1});
+    const textAnim = TweenMax.fromTo(text, 3, {top: 400, opacity: 1}, {top: 0, opacity: 0});
 
     const scene2 = new ScrollMagic.Scene({
         duration: 4000,
         triggerElement: intro,
         triggerHook: 0
     })
+    .addIndicators()
     .setTween(textAnim)
     .addTo(controller);
 
     // Video Animation
     // let accelamount = 0;
-    let scrollpos = 0;
+    // let scrollpos = 0;
     // let delay = 0;
 
     // Text Animation 2
@@ -127,9 +129,9 @@ $(document).ready(function () {
     // .addTo(controller);
 
     // Video Animation
-    // let accelamount = 0;
-    // let scrollpos = 0;
-    // let delay = 0;
+    let accelamount = 0.1;
+    let scrollpos = 0;
+    let delay = 0;
 
     scene.on('update', e => {
         scrollpos = e.scrollPos / 1000;
@@ -137,11 +139,11 @@ $(document).ready(function () {
     });
 
     setInterval(() => {
-        // delay += (scrollpos - delay) * accelamount;
-        // console.log(scrollpos, delay);
+        delay += (scrollpos - delay) * accelamount;
+        console.log(scrollpos, delay);
 
-        video.currentTime = scrollpos
-    }, 100);
+        video.currentTime = delay
+    }, 91);
 
 
 });
