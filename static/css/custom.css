@@ -476,6 +476,7 @@
     background-size: cover;
     background-repeat: var(--main-bg-repeat);
     background-position: var(--main-center-position);
+    background-attachment: fixed;
     display: flex;
     justify-content: var(--main-center-position);
     align-items: var(--main-center-position);
